@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="/css/reset.css">
+            <link rel="stylesheet" href="/css/style.css">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="content">
+        {% block header %}
+            <header>
+                <h1>Ânes-OK</h1>
+                <p>Location-Promenade</p>
+                <img src="/img/anes-logo.png" alt="logo" id="logo">
+                <div class="lang">
+                    <ul>
+                        <li id="first_lang"><a href=""><img src="/img/lang/fr.png" alt="français" class="lang_img"></a></li>
+                        <li><a href=""><img src="/img/lang/nl.png" alt="nederland" class="lang_img"></a></li>
+                        <li><a href=""><img src="/img/lang/uk.png" alt="english" class="lang_img"></a></li>
+                    </ul>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="{{ path('homepage') }}">Accueil</a></li>
+                        <li><a href="{{ path('anes') }}">Nos Ânes</a></li>
+                        <li><a href="{{ path('tarifs') }}">Tarifs</a></li>
+                        <li><a href="{{ path('contact') }}">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div>
+                {% block header_img %}
+                    {#<img src="https://placeimg.com/2000/800/nature" class="bckgnd_top_home" alt="">#}
+                    <img src="/img/bckgnd_header.jpg" class="bckgnd_top_home" alt="">
+                {% endblock %}
+            </div>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block footer %}
+            <div class="footer">
+                <div id="footer_1" class="footer_child">
+                    <h3>Nous contacter !</h3>
+                    <div>
+                        <p><a href="{{ path('contact') }}">info@anes-ok.be</a></p>
+                        <p>(+32)  87 64 76 07</p>
+                        <p>(+32) 497 92 54 13</p>
+                    </div>
+                </div>
+                <div id="footer_2" class="footer_child">
+                    <h3>Nous rejoindre</h3>
+                    <div>
+                        <p>55 rue Abbé Dossogne</p>
+                        <p>4970 Hockai</p>
+                    </div>
+                </div>
+                <div id="footer_3" class="footer_child">
+                    <h3>Nous suivre</h3>
+                    <div id="facebook_logo" class="social_logo">
+                        <div class="front">
+                            <img src="/img/social/facebook.png" alt="Facebook">
+                        </div>
+                        <div class="back">
+                            <img src="/img/social/facebook_hover.png" alt="Facebook">
+                        </div>
+                    </div>
+                    <div id="twitter_logo" class="social_logo">
+                        <div class="front">
+                            <img src="/img/social/twitter.png" alt="Twitter">
+                        </div>
+                        <div class="back">
+                            <img src="/img/social/twitter_hover.png" alt="Twitter">
+                        </div>
+                    </div>
+                    <div id="instagram_logo" class="social_logo">
+                        <div class="front">
+                            <img src="/img/social/instagram.png" alt="Instagram">
+                        </div>
+                        <div class="back">
+                            <img src="/img/social/instagram_hover.png" alt="Instagram">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+       </div>
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="/js/jquery-ui/jquery-ui.js"></script>
+            <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+            <script type="text/javascript" src="/js/navbar.js"></script>
+            <script type="text/javascript" src="/js/effect_images.js"></script>
+        {% endblock %}
+    </body>
+</html>

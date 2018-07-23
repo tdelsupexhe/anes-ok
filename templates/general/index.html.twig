@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ânes-OK{% endblock %}
+
+{% block body %}
+<section id="decouvrir">
+    <h2 class="titre_section text_center">Découvrir les fagnes avec un âne</h2>
+    <hr>
+    <div class="texte_section">
+        <p>Il existe de multiples façons de découvrir une région : à pieds, en vélo, ski, cheval… et pourquoi pas avec des ânes ?</p>
+        <p>La formule est simple. Durant les week-ends, congés, vacances… Ânes-OK vous offre la possibilité de louer un âne à l’heure, la demi-journée, la journée, la semaine…</p>
+        <p>Faites connaissance avec votre compagnon de balade, soyez attentifs aux conseils prodigués et partez au rythme de l’âne.</p>
+        <p>Que ce soit pour une heure ou plus vous n’oublierez pas de sitôt ce moment.</p>
+        <p>Partenaire idéal, l’âne vous apprendra calme, patience, tendresse. Il vous accompagnera, portant votre enfant ou votre pique-nique, vos bagages…</p>
+        <p>Vous lui indiquerez le chemin, lui, vous imposera son rythme tranquille. Vous en reviendrez enchantés !</p>
+    </div>
+    <div class="image_section" id="image_decouvrir">
+        <img src="/img/3anes.png" alt="anes-vect" class="img_center" id="anes_decouvrir">
+    </div>
+</section>
+<section id="photos" class="hover_opacity">
+    <div class="marg0">
+        <figure>
+            {#<img src="https://placeimg.com/800/600/people/100" class="cover_fit"/>#}
+            <img src="/img/portf_01.jpg" class="cover_fit"/>
+        </figure>
+    </div>
+    <div class="marg0">
+        <figure>
+            {#<img src="https://placeimg.com/800/600/people/200" class="cover_fit"/>#}
+            <img src="/img/portf_02.jpg" class="cover_fit"/>
+        </figure>
+    </div>
+    <div class="marg0">
+        <figure>
+            {#<img src="https://placeimg.com/800/600/people/300" class="cover_fit"/>#}
+            <img src="/img/portf_03.jpg" class="cover_fit"/>
+        </figure>
+    </div>
+    <div class="marg0">
+        <figure>
+            {#<img src="https://placeimg.com/800/600/people/400" class="cover_fit"/>#}
+            <img src="/img/portf_04.jpg" class="cover_fit"/>
+        </figure>
+    </div>
+</section>
+<section id="rencontrer">
+    <h2 class="text_center titre_section">Rencontrer notre équipe</h2>
+    <hr>
+    <div class="texte_section">
+        <p>Passionnés d’élevage, amoureux de nature et de beaux paysages, c’est à Hockai, petit village bien connu des promeneurs que Thierry et Marie-Thérèse
+            ont choisi de s’installer et d’y développer un projet qui leur tenait à cœur depuis de nombreuses années : <strong>Ânes-OK</strong>.</p>
+        <p>Instituteur et logopède, ils consacrent tous deux leur carrière aux personnes en difficultés et privilégient l’écoute et la communication.
+            C’est tout naturellement qu’un jour ils ont décidé de mettre sur pied une nouvelle activité :</p>
+        <p>Mettre à la disposition des petits et des grands des ânes, compagnons, partenaires de moments inoubliables.</p>
+        <p><b>Laissez-vous tenter…</b></p>
+        <p><b>Laissez- vous guider !</b></p>
+    </div>
+    <div class="image_section text_center">
+        <div id="thierry" class="photos_proprio">
+            <div class="front">
+                <img src="/img/thierry.jpg" alt="Thierry" width="120px" class="margin1rem rounded">
+            </div>
+            <div class="back">
+                <img src="/img/thierry_back.jpg" alt="Thierry" width="120px" class="margin1rem rounded">
+            </div>
+        </div>
+        <div id="mth" class="photos_proprio">
+            <div class="front">
+                <img src="/img/mth.jpg" alt="Marie-Thérèse" width="120px" class="margin1rem rounded">
+            </div>
+            <div class="back">
+                <img src="/img/mth_back.jpg" alt="Marie-Thérèse" width="120px" class="margin1rem rounded">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

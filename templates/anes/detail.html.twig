@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ânes-OK | Nos ânes{% endblock %}
+
+{% block body %}
+        <div>
+            <h2>{{ ane.nom }} - {{ ane.anneeNaissance }}</h2>
+            <p>{{ ane.text }}</p>
+        </div>
+{% endblock %}

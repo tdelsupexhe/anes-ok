@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ânes-OK | Ajouter un ânes{% endblock %}
+{% block header_img %}
+    <img src="/img/bckgnd_header_contact.jpg" class="bckgnd_top" alt="">
+{% endblock %}
+{% block body %}
+    <section id="contact_section">
+        <h2 class="titre_section text_center">Modifier un âne</h2>
+        <hr>
+        <div class="texte_section">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+        <div class="image_section">
+            trest
+        </div>
+    </section>
+{% endblock %}
