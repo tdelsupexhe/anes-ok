@@ -15,12 +15,12 @@ class AnesController extends AbstractController
      */
     public function index()
     {
-        $repository = $this->getDoctrine()->getRepository(AnesType::class);
+        $repository = $this->getDoctrine()->getRepository(Anes::class);
         $anes = $repository->findAll();
 
         return $this->render('/anes/index.html.twig',
             [
-                'anes' => $anes
+                'anes' => $anes,
             ]);
     }
 

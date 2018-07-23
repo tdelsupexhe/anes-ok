@@ -1,17 +1,17 @@
 /**************************************************** POLICES ****************************************************/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @font-face {
     font-family: 'barutablack';
     src: url('/fonts/rns-b-webfont.eot');
     src: url('/fonts/rns-b-webfont.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/rns-b-webfont.woff2') format('woff2'),
-        url('/fonts/rns-b-webfont.woff') format('woff'),
-        url('/fonts/rns-b-webfont.ttf') format('truetype'),
-        url('/fonts/rns-b-webfont.svg#barutablack') format('svg');
+url('/fonts/rns-b-webfont.woff2') format('woff2'),
+url('/fonts/rns-b-webfont.woff') format('woff'),
+url('/fonts/rns-b-webfont.ttf') format('truetype'),
+url('/fonts/rns-b-webfont.svg#barutablack') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 /**************************************************** BASES ****************************************************/
 html{
@@ -21,6 +21,7 @@ html{
 body{
     font-family: 'Open Sans', sans-serif;
     font-size: 1.4rem;
+    line-height: 2rem;
     color: #444444;
 }
 
@@ -44,7 +45,7 @@ h3{
     white-space: nowrap;
 }
 
-section, section>div{
+section, section>div, article, article>div{
     margin: 3rem;
 }
 
@@ -112,6 +113,22 @@ label {
     margin: .5rem 0;
 }
 
+button[type=submit]{
+    font-family: 'Open Sans', sans-serif;
+    width: 120px;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 3rem;
+}
+
+button[type=submit]:hover{
+    border: 1px solid #AF0D57;
+    background-color: #d01c63;
+    color: #fff;
+}
+
 /* liens */
 a{
     color: #d01c63;
@@ -130,6 +147,10 @@ header a:hover{
     color: #BA8A88;
 }
 
+img{
+    max-width: 100%;
+}
+
 
 /**************************************************** POUR TOUTES LES RESOLUTIONS ****************************************************/
 
@@ -146,6 +167,7 @@ header a:hover{
 .bckgnd_top{
     max-width: 100%;
     object-fit: cover;
+    min-height: 220px;
 }
 
 /***** HEADER *****/
@@ -293,35 +315,6 @@ textarea[id=contact_message]{
     min-height: 200px;
 }
 
-input[id=contact_submit]{
-    width: 100px;
-    margin: 1rem 0;
-    background-color: #ccc;
-    border-radius: 3rem;
-}
-
-input[id=contact_submit]:hover{
-    border: 1px solid #AF0D57;
-    background-color: #d01c63;
-    color: #fff;
-}
-
-button[type=submit]{
-    font-family: 'Open Sans', sans-serif;
-    width: 120px;
-    margin: 1rem 0;
-    padding: 1rem;
-    background-color: #ccc;
-    border: 1px solid #ccc;
-    border-radius: 3rem;
-}
-
-button[type=submit]:hover{
-    border: 1px solid #AF0D57;
-    background-color: #d01c63;
-    color: #fff;
-}
-
 /* tarifs */
 .table_prix{
     display: grid;
@@ -442,6 +435,7 @@ button[type=submit]:hover{
     header>.lang{
         display: block;
         grid-area: lang;
+        margin-right: 1rem;
     }
 
     header>.lang>ul{
@@ -458,6 +452,9 @@ button[type=submit]:hover{
         margin-top: 1rem;
     }
 
+    .bckgnd_top {
+        min-height: 180px;
+    }
 
     .scroll_header {
         background: linear_gradient(#fff 85%, transparent);
@@ -471,7 +468,7 @@ button[type=submit]:hover{
     }
 
     /***** MAIN *****/
-    #decouvrir, #rencontrer, #contact_section, #tarifs, #randonnee{
+    .grid_section{
         display: grid;
         grid-template-columns: 10fr 350px;
         grid-template-areas:
@@ -494,6 +491,36 @@ button[type=submit]:hover{
 
     hr{
         grid-area: hr;
+    }
+
+    .grid_article{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+                "titre      titre"
+                "hr         hr"
+                "show_image texte"
+                "show_image texte"
+                "show_image texte"
+                "thumbnails texte";
+    }
+
+    .titre_article{
+        grid-area: titre;
+    }
+
+    .texte_article{
+        grid-area: texte;
+    }
+
+    .image_article{
+        grid-area: show_image;
+        margin-bottom: 0;
+    }
+
+    .thumb_article{
+        grid-area: thumbnails;
+        margin-top: 0;
     }
 
     /* tarifs */
@@ -538,13 +565,23 @@ button[type=submit]:hover{
     }
     /***** MAIN *****/
 
-    #decouvrir, #rencontrer, #contact_section, #tarifs, #randonnee{
-        display: grid;
-        grid-template-columns: 3fr 10fr 350px 3fr;
+    .grid_section{
+        grid-template-columns: 3fr 10fr 3fr 3fr;
         grid-template-areas:
                 "a  titre  titre    b"
                 "a  hr     hr       b"
                 "a  texte  images   b";
+    }
+
+    .grid_article{
+        grid-template-columns: 3fr 7fr 6fr 3fr;
+        grid-template-areas:
+                "a  titre      titre    b"
+                "a  hr         hr       b"
+                "a  show_image texte    b"
+                "a  show_image texte    b"
+                "a  show_image texte    b"
+                "a  thumbnails texte    b";
     }
 
     #photos{
