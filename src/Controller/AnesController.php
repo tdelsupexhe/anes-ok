@@ -32,25 +32,20 @@ class AnesController extends AbstractController
     public function add_anes(Request $request, FileUploader $fileUploader)
     {
         $anes = new Anes();
-
         $form = $this->createForm(AnesType::class, $anes);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-
             //on récupère le fichier dans $file
             $file = $form->get('image001')->getData();
             //on l'upload dans le bon répertoire
             $fileName = $fileUploader->upload($file);
             //on le met dans la db
             $anes->setImage001($fileName);
-
             $em= $this->getDoctrine()->getManager();
             $em->persist($anes);
             $em->flush();
-
             return $this->redirectToRoute('anes');
         }
-
         return $this->render('/anes/add_anes.html.twig',
             [
                 'form'=>$form->createView()
@@ -68,10 +63,9 @@ class AnesController extends AbstractController
         $form = $this->createForm(AnesType::class, $ane);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-            $file = new File($this->getParameter('images_anes_directory').'/'.$ane->getImage001());
-            var_dump($file);
-            die();
-            $ane->setImage001($file);
+           /* $ane->setImage001(
+                new File($this->getParameter('images_anes_directory').'/'.$ane->getImage001())
+            );*/
 
             $em = $this->getDoctrine()->getManager();
             $em->flush();
