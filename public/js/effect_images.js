@@ -6,10 +6,9 @@ $( document ).ready(function() {
     $('#image_decouvrir').hover(function(){
         $('#anes_decouvrir').animate({
             width: "0%"
-        }, 1500);
-        $('#anes_decouvrir').animate({
+        }, 1500).animate({
             width: "100%"
-        }, 1500)
+        }, 1500);
         console.log('test');
     });
 
@@ -39,12 +38,8 @@ $( document ).ready(function() {
         trigger: 'hover'
     });
 
-    $("#prix01").flip({
-        axis: 'x',
-        trigger: 'hover'
-    });
-
     // ************* effect sur les prix
+    // noinspection JSJQueryEfficiency
     $('#prix01').hover(function () {
         console.log('test');
         $(this).effect("bounce", { times:5 }, 800);

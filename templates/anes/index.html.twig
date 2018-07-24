@@ -15,10 +15,12 @@
         <article class="grid_article">
             <h2 class="titre_article text_center">{{ ane.nom }} - {{ ageAne }} ans</h2>
             <hr>
-            <div class="texte_article">{{ ane.text }}</div>
+            <div class="texte_article">
+                {{ ane.text }}
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image001) }}" class="rounded">
+            </div>
             <div id="show_image_{{ cpt }}" class="image_article">
                 <img src="https://placeimg.com/618/400/1" class="rounded">
-
             </div>
             <div id="thumbnails_{{ cpt }}" class="thumb_article">
                 <img src="https://placeimg.com/100/50/2" class="rounded">
