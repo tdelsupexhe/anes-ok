@@ -55,12 +55,9 @@ $( document ).ready(function() {
     });
 
     // ************* thumbnail
-    $('#thumbnails_1 img').click(function(){
-        $('#large_image_1').attr('src',$(this).attr('src').replace('thumb','large'));
-    });
-
-    $('#thumbnails_2 img').click(function(){
-        $('#large_image_2').attr('src',$(this).attr('src').replace('thumb','large'));
+    $('[id^=thumbnails_]').on('click','img', function(e){
+        var num_id = ($(this).attr("data-id"));
+        $('#large_image_' + num_id).attr('src',$(this).attr('src').replace('thumb','large'));
     });
 });
 

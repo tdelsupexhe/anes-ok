@@ -20,12 +20,12 @@
                 <img src="{{ asset('uploads/images_anes/' ~ ane.image001[:32]) }}-large.jpeg" class="rounded" id="large_image_{{ cpt }}">
             </div>
             <div id="thumbnails_{{ cpt }}" class="thumb_article">
-                <img src="{{ asset('uploads/images_anes/' ~ ane.image001[:32]) }}-thumb.jpeg" class="rounded">
-                <img src="{{ asset('uploads/images_anes/' ~ ane.image002[:32]) }}-thumb.jpeg" class="rounded">
-                <img src="{{ asset('uploads/images_anes/' ~ ane.image003[:32]) }}-thumb.jpeg" class="rounded">
-                <img src="{{ asset('uploads/images_anes/' ~ ane.image004[:32]) }}-thumb.jpeg" class="rounded">
-                <img src="{{ asset('uploads/images_anes/' ~ ane.image005[:32]) }}-thumb.jpeg" class="rounded">
-                <img src="{{ asset('uploads/images_anes/' ~ ane.image006[:32]) }}-thumb.jpeg" class="rounded">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image001[:32]) }}-thumb.jpeg" class="rounded" data-id="{{ cpt }}">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image002[:32]) }}-thumb.jpeg" class="rounded" data-id="{{ cpt }}">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image003[:32]) }}-thumb.jpeg" class="rounded" data-id="{{ cpt }}">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image004[:32]) }}-thumb.jpeg" class="rounded" data-id="{{ cpt }}">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image005[:32]) }}-thumb.jpeg" class="rounded" data-id="{{ cpt }}">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image006[:32]) }}-thumb.jpeg" class="rounded" data-id="{{ cpt }}">
             </div>
         </article>
         {% set cpt = cpt+1 %}

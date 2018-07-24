@@ -34,6 +34,7 @@ h1{
 h2{
     font-family: 'barutablack';
     font-size: 4rem;
+    line-height: 3.4rem;
     color: #444444;
     margin: 3rem;
 }
@@ -91,6 +92,10 @@ br{
 
 .rounded{
     border-radius: 20rem;
+}
+
+.thumb_article{
+    text-align: center;
 }
 
 .thumbnail{
