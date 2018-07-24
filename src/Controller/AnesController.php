@@ -35,12 +35,49 @@ class AnesController extends AbstractController
         $form = $this->createForm(AnesType::class, $anes);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
+
             //on récupère le fichier dans $file
-            $file = $form->get('image001')->getData();
+            $file001 = $form->get('image001')->getData();
             //on l'upload dans le bon répertoire
-            $fileName = $fileUploader->upload($file);
+            $fileName001 = $fileUploader->upload($file001);
             //on le met dans la db
-            $anes->setImage001($fileName);
+            $anes->setImage001($fileName001);
+
+            //on récupère le fichier dans $file
+            $file002 = $form->get('image002')->getData();
+            //on l'upload dans le bon répertoire
+            $fileName002 = $fileUploader->upload($file002);
+            //on le met dans la db
+            $anes->setImage002($fileName002);
+
+            //on récupère le fichier dans $file
+            $file003 = $form->get('image003')->getData();
+            //on l'upload dans le bon répertoire
+            $fileName003 = $fileUploader->upload($file003);
+            //on le met dans la db
+            $anes->setImage003($fileName003);
+
+            //on récupère le fichier dans $file
+            $file004 = $form->get('image004')->getData();
+            //on l'upload dans le bon répertoire
+            $fileName004 = $fileUploader->upload($file004);
+            //on le met dans la db
+            $anes->setImage004($fileName004);
+
+            //on récupère le fichier dans $file
+            $file005 = $form->get('image005')->getData();
+            //on l'upload dans le bon répertoire
+            $fileName005 = $fileUploader->upload($file005);
+            //on le met dans la db
+            $anes->setImage005($fileName005);
+
+            //on récupère le fichier dans $file
+            $file006 = $form->get('image006')->getData();
+            //on l'upload dans le bon répertoire
+            $fileName006 = $fileUploader->upload($file006);
+            //on le met dans la db
+            $anes->setImage006($fileName006);
+
             $em= $this->getDoctrine()->getManager();
             $em->persist($anes);
             $em->flush();

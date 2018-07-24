@@ -1,9 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Ânes-OK | Nos ânes{% endblock %}
-{% block stylesheets %}
-    {{ parent() }}
-{% endblock %}
 
 {% block header_img %}
     <img src="/img/bckgnd_header_contact.jpg" class="bckgnd_top" alt="">
@@ -17,24 +14,20 @@
             <hr>
             <div class="texte_article">
                 {{ ane.text }}
-                <img src="{{ asset('uploads/images_anes/' ~ ane.image001) }}" class="rounded">
+{{ ane.image001[:32] }}
             </div>
             <div id="show_image_{{ cpt }}" class="image_article">
-                <img src="https://placeimg.com/618/400/1" class="rounded">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image001[:32]) }}-large.jpeg" class="rounded" id="large_image_{{ cpt }}">
             </div>
             <div id="thumbnails_{{ cpt }}" class="thumb_article">
-                <img src="https://placeimg.com/100/50/2" class="rounded">
-                <img src="https://placeimg.com/100/50/3" class="rounded">
-                <img src="https://placeimg.com/100/50/10" class="rounded">
-                <img src="https://placeimg.com/100/50/5" class="rounded">
-                <img src="https://placeimg.com/100/50/20" class="rounded">
-                <img src="https://placeimg.com/100/50/26" class="rounded">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image001[:32]) }}-thumb.jpeg" class="rounded">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image002[:32]) }}-thumb.jpeg" class="rounded">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image003[:32]) }}-thumb.jpeg" class="rounded">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image004[:32]) }}-thumb.jpeg" class="rounded">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image005[:32]) }}-thumb.jpeg" class="rounded">
+                <img src="{{ asset('uploads/images_anes/' ~ ane.image006[:32]) }}-thumb.jpeg" class="rounded">
             </div>
         </article>
         {% set cpt = cpt+1 %}
     {% endfor %}
-    {% block javascripts %}
-       {{ parent() }}
-        <script type="text/javascript" src="/js/jquery.cycle2.min.js"></script>
-    {% endblock %}
 {% endblock %}

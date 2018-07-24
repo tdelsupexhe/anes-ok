@@ -93,6 +93,11 @@ br{
     border-radius: 20rem;
 }
 
+.thumbnail{
+    width: 100px;
+    height: 50px;
+}
+
 /* formulaire */
 input, textarea{
     display: block;

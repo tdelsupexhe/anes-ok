@@ -48,10 +48,7 @@ class Anes
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image006;
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image007;
+
     public function getId()
     {
         return $this->id;

@@ -39,7 +39,6 @@ $( document ).ready(function() {
     });
 
     // ************* effect sur les prix
-    // noinspection JSJQueryEfficiency
     $('#prix01').hover(function () {
         console.log('test');
         $(this).effect("bounce", { times:5 }, 800);
@@ -53,6 +52,15 @@ $( document ).ready(function() {
     $('#prix03').hover(function () {
         console.log('test');
         $(this).effect("bounce", { times:5 }, 800);
+    });
+
+    // ************* thumbnail
+    $('#thumbnails_1 img').click(function(){
+        $('#large_image_1').attr('src',$(this).attr('src').replace('thumb','large'));
+    });
+
+    $('#thumbnails_2 img').click(function(){
+        $('#large_image_2').attr('src',$(this).attr('src').replace('thumb','large'));
     });
 });
 
