@@ -103,6 +103,15 @@ br{
     height: 50px;
 }
 
+.show{
+    display: grid;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
 /* formulaire */
 input, textarea{
     display: block;
@@ -199,6 +208,7 @@ header {
 
 header>h1{
     grid-area: nom_h1;
+    line-height: 4rem;
     text-align: center;
 }
 
@@ -215,8 +225,14 @@ header>img{
     margin-right: auto;
 }
 
+#menu_icon{
+    display: block;
+    text-align: right;
+    margin: 2rem;
+}
+
 header>nav{
-    display: none;
+    grid-area: menu;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
@@ -225,8 +241,11 @@ header>nav{
 }
 
 header>nav>ul{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem 2rem;
+    width: 150px;
+    float: right;
 }
 
 header>.lang{
@@ -270,6 +289,11 @@ header>.lang{
     color: #d01c63;
 }
 
+.reduc_show{
+    left: 0;
+    width: 100%;
+}
+
 /***** MAIN *****/
 
 section>p{
@@ -292,6 +316,11 @@ section>p{
     margin: 0 auto;
     display: block;
 }
+
+/* images 3 ans */
+/*#anes_decouvrir{
+    height: 200px;
+}*/
 
 /* effet sur les images portfolio au survol */
 .hover_opacity figure {
@@ -363,7 +392,7 @@ textarea[id=contact_message]{
 /***** FOOTER *****/
 .footer{
     background: #386066 url("/img/fond-footer-smart.jpg") repeat-x bottom;
-    min-height: 500px;
+    min-height: 660px;
     overflow: hidden;
 }
 
@@ -386,9 +415,7 @@ textarea[id=contact_message]{
 }
 
 .social_logo{
-    width: 2rem;
-    height: 2rem;
-    margin: 1rem 4rem 0 0;
+    margin: 1rem 1rem 0 0;
     display: inline-block;
 }
 
@@ -397,24 +424,44 @@ textarea[id=contact_message]{
     #photos {
         grid-template-columns: 1fr 1fr;
     }
+
+    .footer{
+        min-height: 600px;
+    }
 }
 
 @media all and (min-width: 500px) and (min-device-width: 500px)  {
     .table_prix{
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .footer{
+        min-height: 560px;
+    }
 }
 
 /**************************************************** POUR LES TABLETTES ****************************************************/
 @media all and (min-width: 800px) and (min-device-width: 800px) {
+    .show{
+        position: inherit;
+    }
+    
+    /*.menu_mobile{
+        color: #fff;
+    }*/
     /***** HEADER *****/
     header {
         grid-template-rows: 80px 60px 60px;
-        grid-template-columns: 1fr 150px 200px 1fr;
+        grid-template-columns: 1fr 250px 250px 1fr;
         grid-template-areas:
                 "a  logo    nom_h1  lang"
                 "a  logo    nom_p   d"
                 "a  menu    menu    d";
+    }
+
+    header>img{
+        margin-left: auto;
+        margin-right: 0;
     }
 
     header>h1{
@@ -427,10 +474,22 @@ textarea[id=contact_message]{
 
     }
 
+    #menu_icon{
+        display: none;
+    }
+
     header>nav{
-        display: block;
-        grid-area: menu;
+        display: grid;
         text-align: center;
+    }
+    header>nav>ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background: none;
+        padding: 0;
+        width: 100%;
+        float: none;
+        font-size: 2rem;
     }
 
     header>.lang{
@@ -458,11 +517,11 @@ textarea[id=contact_message]{
     }
 
     .scroll_header {
-        background: linear_gradient(#fff 85%, transparent);
+        background: linear-gradient(#fff 85%, transparent);
     }
 
     .reduc_header{
-        grid-template-columns: 50px 140px 92px 1fr 400px;
+        grid-template-columns: 50px 140px 92px 1fr 500px;
         grid-template-areas:
                 "a  nom_h1  logo    d   lang"
                 "a  nom_p   logo    d   menu";
@@ -554,7 +613,7 @@ textarea[id=contact_message]{
     /***** HEADER *****/
     header {
         grid-template-rows: 50px 50px 50px;
-        grid-template-columns: 50px 235px 150px 1fr 400px ;
+        grid-template-columns: 50px 235px 150px 1fr 500px ;
         grid-template-areas:
                 "d  b      logo    a   a"
                 "d  nom_h1 logo    c   lang"

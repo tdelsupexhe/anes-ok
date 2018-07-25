@@ -3,13 +3,8 @@ $( document ).ready(function() {
     // ***************** HOME PAGE *****************
 
     // ***************** image des 3 anes
-    $('#image_decouvrir').hover(function(){
-        $('#anes_decouvrir').animate({
-            width: "0%"
-        }, 1500).animate({
-            width: "100%"
-        }, 1500);
-        console.log('test');
+    $('#image_decouvrir').hover(function () {
+        $('#anes_decouvrir').effect("bounce", { direction:'up', times:5 }, 800);
     });
 
     // ***************** photos des proprios
@@ -40,17 +35,14 @@ $( document ).ready(function() {
 
     // ************* effect sur les prix
     $('#prix01').hover(function () {
-        console.log('test');
         $(this).effect("bounce", { times:5 }, 800);
     });
 
     $('#prix02').hover(function () {
-        console.log('test');
         $(this).effect("bounce", { times:5 }, 800);
     });
 
     $('#prix03').hover(function () {
-        console.log('test');
         $(this).effect("bounce", { times:5 }, 800);
     });
 

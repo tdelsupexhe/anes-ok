@@ -5,6 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="/css/reset.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
             <link rel="stylesheet" href="/css/style.css">
         {% endblock %}
     </head>
@@ -23,7 +24,8 @@
                     </ul>
                 </div>
                 <nav>
-                    <ul>
+                    <div id="menu_icon"><i class="fas fa-bars fa-2x"></i></div>
+                    <ul id="menu_ul">
                         <li><a href="{{ path('homepage') }}">Accueil</a></li>
                         <li><a href="{{ path('anes') }}">Nos Ânes</a></li>
                         <li><a href="{{ path('tarifs') }}">Tarifs</a></li>
