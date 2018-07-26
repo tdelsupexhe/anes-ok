@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ânes-OK | Ajouter une image{% endblock %}
+{% block header_img %}
+    <img src="/img/bckgnd_header_contact.jpg" class="bckgnd_top" alt="">
+{% endblock %}
+{% block body %}
+    <section id="contact_section">
+        <h2 class="titre_section text_center">Ajouter une image</h2>
+        <hr>
+        <div class="texte_section">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <a href="{{ path('homepage') }}"><button id="image_anes_exit" name="image_anes[exit]">Sortir</button></a>
+            {{ form_end(form) }}
+        </div>
+    </section>
+{% endblock %}

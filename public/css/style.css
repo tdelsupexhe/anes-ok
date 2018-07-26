@@ -132,7 +132,7 @@ label {
     margin: .5rem 0;
 }
 
-button[type=submit]{
+button{
     font-family: 'Open Sans', sans-serif;
     width: 120px;
     margin: 1rem 0;
@@ -142,7 +142,7 @@ button[type=submit]{
     border-radius: 3rem;
 }
 
-button[type=submit]:hover{
+button:hover{
     border: 1px solid #AF0D57;
     background-color: #d01c63;
     color: #fff;

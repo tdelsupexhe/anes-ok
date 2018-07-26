@@ -1,5 +1,7 @@
 <?php
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnesRepository")
@@ -24,30 +26,17 @@ class Anes
      * @ORM\Column(type="text")
      */
     private $text;
+
+
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\OneToMany(targetEntity="App\Entity\ImageAnes", mappedBy="anes", orphanRemoval=true)
      */
-    private $image001;
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image002;
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image003;
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image004;
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image005;
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image006;
+    private $image;
+
+    public function __construct()
+    {
+        $this->image = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -80,67 +69,40 @@ class Anes
         $this->text = $text;
         return $this;
     }
-    public function getImage001(): ?string
+
+    /**
+     * @return Collection|ImageAnes[]
+     */
+    public function getImage(): Collection
     {
-        return $this->image001;
+        return $this->image;
     }
-    public function setImage001(string $image001): self
+
+    public function addImage(ImageAnes $image): self
     {
-        $this->image001 = $image001;
+        if (!$this->image->contains($image)) {
+            $this->image[] = $image;
+            $image->setAnes($this);
+        }
+
         return $this;
     }
-    public function getImage002(): ?string
+
+    public function removeImage(ImageAnes $image): self
     {
-        return $this->image002;
-    }
-    public function setImage002(string $image002): self
-    {
-        $this->image002 = $image002;
+        if ($this->image->contains($image)) {
+            $this->image->removeElement($image);
+            // set the owning side to null (unless already changed)
+            if ($image->getAnes() === $this) {
+                $image->setAnes(null);
+            }
+        }
+
         return $this;
     }
-    public function getImage003(): ?string
+
+    public function __toString()
     {
-        return $this->image003;
-    }
-    public function setImage003(string $image003): self
-    {
-        $this->image003 = $image003;
-        return $this;
-    }
-    public function getImage004(): ?string
-    {
-        return $this->image004;
-    }
-    public function setImage004(string $image004): self
-    {
-        $this->image004 = $image004;
-        return $this;
-    }
-    public function getImage005(): ?string
-    {
-        return $this->image005;
-    }
-    public function setImage005(string $image005): self
-    {
-        $this->image005 = $image005;
-        return $this;
-    }
-    public function getImage006(): ?string
-    {
-        return $this->image006;
-    }
-    public function setImage006(string $image006): self
-    {
-        $this->image006 = $image006;
-        return $this;
-    }
-    public function getImage007(): ?string
-    {
-        return $this->image007;
-    }
-    public function setImage007(string $image007): self
-    {
-        $this->image007 = $image007;
-        return $this;
+        return $this->nom;
     }
 }

@@ -20,14 +20,7 @@ class AnesType extends AbstractType
             ->add('nom', TextType::class)
             ->add('anneeNaissance', NumberType::class)
             ->add('text', TextareaType::class)
-            ->add('image001',FileType::class/*, array(
-                'multiple' => true
-            )*/)
-            ->add('image002',FileType::class)
-            ->add('image003',FileType::class)
-            ->add('image004',FileType::class)
-            ->add('image005',FileType::class)
-            ->add('image006',FileType::class)
+
             ->add('save', SubmitType::class, array('label' => 'Envoyer'))
         ;
     }
