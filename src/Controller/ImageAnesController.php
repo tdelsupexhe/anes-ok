@@ -23,6 +23,7 @@ class ImageAnesController extends AbstractController
 
     /**
      * @Route("/anes/images/add", name="image_anes_add")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function add(Request $request, FileUploader $fileUploader)
     {
