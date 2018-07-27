@@ -25,7 +25,11 @@ $(window).on('scroll',function(){
     if (stop > 0) {
         reductionHeader();
     } else {
-        aggrHeader();
+        if($('#menu_ul').hasClass('show')){
+            reductionHeader();
+        } else{
+            aggrHeader();
+        }
     }
 });
 
