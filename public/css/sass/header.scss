@@ -18,7 +18,7 @@ header{
   }
 
   .reduc_h1{
-    font-size: $taileeH1;
+    font-size: $tailleH1;
     margin: 2rem 0 0 0;
   }
 
@@ -139,3 +139,111 @@ header{
   object-fit: cover;
   min-height:350px;
 }
+
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+
+@media all and (min-device-width: 700px) and (min-width: 700px) {
+  $tailleH1Tab: ($tailleH1/5)*4;
+  $lineHeightH1: $tailleH1Tab;
+  $tailleTextHeaderTab: ($tailleTextHeader/4)*3;
+
+  header {
+    grid-template-rows: 12rem 6rem 6rem;
+    grid-template-columns: 1fr 33rem 33rem 1fr;
+    grid-template-areas: "a  logo    nom_h1  lang" "a  logo    nom_p   d" "a  menu    menu    d";
+
+    h1 {
+      font-size: $tailleH1Tab;
+      text-align: left;
+    }
+    .reduc_h1 {
+      font-size: $tailleH1Tab;
+      margin: 2rem 0 0 1rem;
+      padding: 0;
+    }
+
+    p {
+      font-size: $tailleTextHeaderTab;
+      line-height: $tailleTextHeaderTab;
+      text-align: left;
+    }
+
+    .reduc_p {
+      font-size: $tailleTextHeaderTab;
+      line-height: $tailleTextHeaderTab;
+      margin-left: 1rem;
+    }
+
+    .reduc_logo {
+      height: 15rem;
+    }
+
+    nav {
+      display: grid;
+      text-align: center;
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: none;
+        padding: 0;
+        width: 100%;
+        float: none;
+        font-size: $tailleH1/4;
+
+        li {
+          a {
+            color: $blanc;
+          }
+        }
+      }
+
+      #menu_icon {
+        display: none;
+      }
+    }
+
+    .reduc_nav {
+      color: $gris;
+    }
+
+    .lang {
+      display: block;
+      grid-area: lang;
+      margin-right: 1rem;
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr repeat(3, 4rem);
+
+        #first_lang {
+          grid-column-start: 2;
+        }
+
+        li {
+          a {
+            img {
+              width: 3rem;
+              height: 3rem;
+              margin: 1rem 1rem 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .reduc_header {
+    grid-template-rows: 10rem 5rem 7rem;
+    grid-template-columns: 5rem 35rem 10rem 1fr 13rem;
+    grid-template-areas: "a  nom_h1  logo    d   lang" "a  nom_p   logo    d   c" "menu menu  menu    menu  menu";
+  }
+
+  .bckgnd_top {
+    max-width: 100%;
+    object-fit: cover;
+    min-height: 27rem;
+  }
+}
+

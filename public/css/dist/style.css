@@ -159,6 +159,70 @@ header {
   object-fit: cover;
   min-height: 350px; }
 
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 700px) and (min-width: 700px) {
+  header {
+    grid-template-rows: 12rem 6rem 6rem;
+    grid-template-columns: 1fr 33rem 33rem 1fr;
+    grid-template-areas: "a  logo    nom_h1  lang" "a  logo    nom_p   d" "a  menu    menu    d"; }
+    header h1 {
+      font-size: 8rem;
+      text-align: left; }
+    header .reduc_h1 {
+      font-size: 8rem;
+      margin: 2rem 0 0 1rem;
+      padding: 0; }
+    header p {
+      font-size: 3rem;
+      line-height: 3rem;
+      text-align: left; }
+    header .reduc_p {
+      font-size: 3rem;
+      line-height: 3rem;
+      margin-left: 1rem; }
+    header .reduc_logo {
+      height: 15rem; }
+    header nav {
+      display: grid;
+      text-align: center; }
+      header nav ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: none;
+        padding: 0;
+        width: 100%;
+        float: none;
+        font-size: 2.5rem; }
+        header nav ul li a {
+          color: #fff; }
+      header nav #menu_icon {
+        display: none; }
+    header .reduc_nav {
+      color: #444; }
+    header .lang {
+      display: block;
+      grid-area: lang;
+      margin-right: 1rem; }
+      header .lang ul {
+        display: grid;
+        grid-template-columns: 1fr repeat(3, 4rem); }
+        header .lang ul #first_lang {
+          grid-column-start: 2; }
+        header .lang ul li a img {
+          width: 3rem;
+          height: 3rem;
+          margin: 1rem 1rem 0 0; }
+  .reduc_header {
+    grid-template-rows: 10rem 5rem 7rem;
+    grid-template-columns: 5rem 35rem 10rem 1fr 13rem;
+    grid-template-areas: "a  nom_h1  logo    d   lang" "a  nom_p   logo    d   c" "menu menu  menu    menu  menu"; }
+  .bckgnd_top {
+    max-width: 100%;
+    object-fit: cover;
+    min-height: 27rem; } }
+
 section {
   margin: 3rem; }
   section h2 {

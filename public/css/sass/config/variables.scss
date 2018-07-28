@@ -11,12 +11,12 @@ $aHover: #BA8A88;
 // polices
 $tailleTexte:     1.4rem;
 $lineHeightText:  2rem;
-$taileeH1:        10rem;
-$lineHeightH1:    10rem;
-$taileeH2:        8rem;
-$lineHeightH2:    8rem;
-$taileeH3:        6rem;
-$lineHeightH3:    6rem;
+$tailleH1:        10rem;
+$lineHeightH1:    $tailleH1;
+$tailleH2:        8rem;
+$lineHeightH2:    $tailleH2;
+$tailleH3:        6rem;
+$lineHeightH3:    $tailleH3;
 $tailleTextHeader:4rem;
 $tailleB:         1.5rem;
 $tailleForm:      4rem;
