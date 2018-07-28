@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@font-face {
+  font-family: 'barutablack';
+  src: url("/fonts/rns-b-webfont.eot");
+  src: url("/fonts/rns-b-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/rns-b-webfont.woff2") format("woff2"), url("/fonts/rns-b-webfont.woff") format("woff"), url("/fonts/rns-b-webfont.ttf") format("truetype"), url("/fonts/rns-b-webfont.svg#barutablack") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+header {
+  display: grid;
+  grid-template-rows: 150px 150px;
+  grid-template-columns: 420px 1fr 1fr;
+  grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c";
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 1rem 0; }
+  header h1 {
+    grid-area: nom_h1;
+    text-align: center;
+    padding-top: 4rem; }
+  header .reduc_h1 {
+    font-size: 10rem;
+    margin: 2rem 0 0 0; }
+  header p {
+    grid-area: nom_p;
+    text-align: center;
+    color: #fff;
+    background-color: inherit;
+    font-size: 4rem;
+    line-height: 4rem; }
+  header .reduc_p {
+    color: #444;
+    background-color: inherit;
+    margin: 0;
+    font-size: 4rem;
+    line-height: 4rem; }
+  header img {
+    grid-area: logo;
+    display: block;
+    height: 180px;
+    margin: 0 auto; }
+  header .reduc_logo {
+    height: 180px;
+    margin: 0 auto; }
+  header .lang {
+    display: none; }
+  header nav {
+    grid-area: menu;
+    color: #fff;
+    background-color: inherit;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem; }
+    header nav a:hover {
+      color: #BA8A88; }
+    header nav #menu_icon {
+      display: block;
+      color: #d01c63;
+      background-color: inherit;
+      text-align: right;
+      margin: 2rem; }
+      header nav #menu_icon .fa-2x {
+        font-size: 8rem; }
+    header nav .show {
+      display: grid;
+      position: absolute;
+      right: 0;
+      top: 200px;
+      font-size: 4rem;
+      line-height: 4.5rem; }
+    header nav .reduc_show {
+      left: 0;
+      width: 100%; }
+    header nav ul {
+      display: none;
+      background-color: #fff;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#fff, endColorstr=transparent);
+      background-image: -moz-linear-gradient(center top, #fff, transparent);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(transparent));
+      padding: 4rem 2rem;
+      float: right; }
+      header nav ul li {
+        padding: 1rem; }
+
+.reduc_header {
+  grid-template-rows: 150px 150px;
+  grid-template-columns: 420px 1fr 1fr;
+  grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c"; }
+
+.origin_header {
+  background: none;
+  transition: all 0.6s; }
+
+.scroll_header {
+  background: linear-gradient(#fff 90%, transparent);
+  transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  padding: 0; }
+
+.bckgnd_top_home {
+  max-width: 100%;
+  min-height: 420px;
+  object-fit: cover; }
+
+.bckgnd_top {
+  max-width: 100%;
+  object-fit: cover;
+  min-height: 350px; }
+
+section {
+  margin: 3rem; }
+  section h2 {
+    text-align: center; }
+  section p {
+    margin-bottom: 1rem; }
+  section img {
+    display: block;
+    margin: 0 auto; }
+
+/** effet sur les images portfolio au survol **/
+#photos {
+  margin: 3rem 0; }
+  #photos figure {
+    background: #d01c63;
+    color: inherit; }
+    #photos figure width img {
+      opacity: 1;
+      background: none;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out; }
+    #photos figure:hover img {
+      opacity: 0.5; }
+
+/** images proprio **/
+.photos_proprio {
+  width: 20rem;
+  height: 20rem;
+  margin: 4rem;
+  display: inline-block; }
+
+.table_prix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 3rem; }
+  .table_prix .prix {
+    display: grid;
+    grid-template-rows: repeat(2, 10rem);
+    text-align: center;
+    color: #fff;
+    background-color: inherit;
+    width: 20rem;
+    margin: 0 auto; }
+    .table_prix .prix .euros {
+      font-family: barutablack, sans-serif;
+      font-size: 7rem;
+      margin-top: 7rem; }
+    .table_prix .prix .temps {
+      font-size: 3rem;
+      margin-top: 2rem; }
+
+#prix01 {
+  background-color: #d01c63;
+  color: #fff; }
+
+#prix02 {
+  background-color: #386066;
+  color: #fff; }
+
+#prix03 {
+  background-color: #697747;
+  color: #fff; }
+
+.footer {
+  background: #386066 url("/img/fond-footer-smart.jpg") repeat-x bottom;
+  color: inherit;
+  min-height: 720px;
+  overflow: hidden; }
+  .footer .footer_child {
+    margin: 3rem; }
+    .footer .footer_child p {
+      margin-left: 0;
+      color: #fff; }
+
+#footer_3 ul {
+  display: grid;
+  grid-template-columns: repeat(3, 75px);
+  margin-top: 1rem; }
+
+#footer_3 .social_logo {
+  margin: 1rem 1rem 0 0;
+  display: inline-block; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #444;
+  background-color: #fff; }
+
+/** FORMATAGE TEXTE **/
+h1 {
+  font-family: "barutablack", sans-serif;
+  font-size: 10rem;
+  line-height: 10rem;
+  color: #d01c63;
+  background-color: inherit; }
+
+h2 {
+  font-family: "barutablack", sans-serif;
+  font-size: 8rem;
+  line-height: 8rem;
+  color: #444;
+  background-color: inherit; }
+
+h3 {
+  font-family: "barutablack", sans-serif;
+  font-size: 6rem;
+  line-height: 6rem;
+  color: #fff;
+  background-color: inherit; }
+
+.text_center {
+  text-align: center; }
+
+.rounded {
+  -webkit-border-radius: 20rem;
+  -moz-border-radius: 20rem;
+  border-radius: 20rem; }
+
+/** LIENS **/
+a {
+  color: #d01c63;
+  background-color: inherit;
+  text-decoration: none; }
+  a:hover {
+    color: #fff; }
+
+/** HR **/
+hr {
+  width: 100px;
+  margin: 3rem auto; }
+
+/** FORMULAIRE **/
+.tailleInputFormulaire, input, label, button {
+  display: block;
+  font-size: 4rem;
+  line-height: 4rem; }
+
+.champs, input, textarea {
+  width: 100%;
+  padding: 1rem;
+  color: #444;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
+
+textarea[id=contact_message] {
+  min-height: 200px; }
+
+label {
+  margin: 2rem 0; }
+
+button {
+  margin: 3rem 0;
+  padding: 3rem;
+  width: 25rem;
+  color: #444;
+  background-color: #ccc;
+  border: 1px solid #ccc; }
+  button:hover {
+    border: 1px solid #AF0D57;
+    background-color: #d01c63;
+    color: #fff; }

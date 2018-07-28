@@ -1,0 +1,47 @@
+section {
+  margin: $margesGenerales;
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: $espaceParagraphe;
+  }
+
+  img {
+    @include img-center;
+  }
+
+}
+
+/** effet sur les images portfolio au survol **/
+#photos{
+  margin: $margesGenerales 0;
+  figure{
+    background: $rose;
+    color: inherit;
+    width
+
+    img{
+      opacity: 1;
+      background: none;
+      @include transition(all, .3s, ease-in-out);
+    }
+
+    &:hover{
+      img{
+        opacity:0.5;
+      }
+    }
+  }
+}
+
+/** images proprio **/
+.photos_proprio{
+  width: 20rem;
+  height: 20rem;
+  margin: 4rem;
+  display: inline-block;
+}
+

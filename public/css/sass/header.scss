@@ -1,0 +1,141 @@
+header{
+  display: grid;
+  grid-template-rows: 150px 150px;
+  grid-template-columns: 420px 1fr 1fr;
+  grid-template-areas:  "nom_h1  logo    d   menu"
+                        "nom_p   logo    d   c";
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 1rem 0;
+
+  h1 {
+    grid-area: nom_h1;
+    text-align: center;
+    padding-top: 4rem;
+  }
+
+  .reduc_h1{
+    font-size: $taileeH1;
+    margin: 2rem 0 0 0;
+  }
+
+  p {
+    grid-area: nom_p;
+    text-align: center;
+    color: $blanc;
+    background-color: inherit;
+    font-size: $tailleTextHeader;
+    line-height: $tailleTextHeader;
+  }
+
+  .reduc_p{
+    color: $gris;
+    background-color: inherit;
+    margin: 0;
+    font-size: $tailleTextHeader;
+    line-height: $tailleTextHeader;
+  }
+
+  img{
+    grid-area: logo;
+    display: block;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .reduc_logo {
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .lang{
+    display: none;
+  }
+
+  nav{
+    grid-area: menu;
+    color: $blanc;
+    background-color: inherit;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+    a:hover{
+      color: $aHover;
+    }
+
+    #menu_icon{
+      display: block;
+      color: $rose;
+      background-color: inherit;
+      text-align: right;
+      margin: 2rem;
+
+      .fa-2x{
+        font-size: $tailleMenuMobile;
+      }
+    }
+
+    .show {
+      display: grid;
+      position: absolute;
+      right: 0;
+      top: 200px;
+      font-size: $tailleTextHeader;
+      line-height: $tailleTextHeader+0.5rem;
+    }
+
+    .reduc_show{
+      left: 0;
+      width: 100%;
+    }
+
+    ul{
+      display: none;
+      @include gradient($blanc, transparent);
+      padding: 4rem 2rem;
+      float: right;
+
+      li{
+        padding: 1rem;
+      }
+    }
+
+  }
+
+}
+
+.reduc_header{
+  grid-template-rows: 150px 150px;
+  grid-template-columns: 420px 1fr 1fr;
+  grid-template-areas:
+"nom_h1  logo    d   menu"
+"nom_p   logo    d   c";
+}
+
+.origin_header {
+  background: none;
+  transition: all 0.6s;
+}
+
+.scroll_header {
+  background: linear-gradient(#fff 90%, transparent);
+  @include transition(all, 0.6s, ease);
+  padding: 0;
+}
+
+.bckgnd_top_home{
+  max-width: 100%;
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.bckgnd_top{
+  max-width: 100%;
+  object-fit: cover;
+  min-height:350px;
+}
