@@ -53,101 +53,51 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/*******************************************************************************/
+/* MIN *************************************************************************/
+/*******************************************************************************/
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
 header {
   display: grid;
-  grid-template-rows: 150px 150px;
-  grid-template-columns: 420px 1fr 1fr;
+  grid-template-rows: 60px 50px;
+  grid-template-columns: 205px 120px 1fr;
   grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c";
-  z-index: 999;
   position: fixed;
   width: 100%;
   left: 50%;
   transform: translate(-50%, 0);
-  padding: 1rem 0; }
+  padding: 1rem 0;
+  z-index: 999; }
   header h1 {
     grid-area: nom_h1;
-    text-align: center;
-    padding-top: 4rem; }
-  header .reduc_h1 {
-    font-size: 10rem;
-    margin: 2rem 0 0 0; }
+    font-size: 5rem;
+    line-height: 5rem;
+    padding-top: 2rem; }
   header p {
     grid-area: nom_p;
-    text-align: center;
+    font-size: 2rem;
     color: #fff;
-    background-color: inherit;
-    font-size: 4rem;
-    line-height: 4rem; }
-  header .reduc_p {
-    color: #444;
-    background-color: inherit;
-    margin: 0;
-    font-size: 4rem;
-    line-height: 4rem; }
+    background-color: inherit; }
   header img {
     grid-area: logo;
     display: block;
-    height: 180px;
-    margin: 0 auto; }
-  header .reduc_logo {
-    height: 180px;
-    margin: 0 auto; }
-  header .lang {
-    display: none; }
+    height: 100px; }
   header nav {
-    grid-area: menu;
-    color: #fff;
-    background-color: inherit;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem; }
-    header nav a:hover {
-      color: #BA8A88; }
+    grid-area: menu; }
     header nav #menu_icon {
       display: block;
+      padding: 1rem;
       color: #d01c63;
-      background-color: inherit;
-      text-align: right;
-      margin: 2rem; }
-      header nav #menu_icon .fa-2x {
-        font-size: 8rem; }
-    header nav .show {
-      display: grid;
-      position: absolute;
-      right: 0;
-      top: 200px;
-      font-size: 4rem;
-      line-height: 4.5rem; }
-    header nav .reduc_show {
-      left: 0;
-      width: 100%; }
+      background-color: inherit; }
     header nav ul {
-      display: none;
-      background-color: #fff;
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#fff, endColorstr=transparent);
-      background-image: -moz-linear-gradient(center top, #fff, transparent);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(transparent));
-      padding: 4rem 2rem;
-      float: right; }
-      header nav ul li {
-        padding: 1rem; }
-
-.reduc_header {
-  grid-template-rows: 150px 150px;
-  grid-template-columns: 420px 1fr 1fr;
-  grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c"; }
-
-.origin_header {
-  background: none;
-  transition: all 0.6s; }
-
-.scroll_header {
-  background: linear-gradient(#fff 90%, transparent);
-  transition: all 0.6s ease;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  padding: 0; }
+      display: none; }
+  header .lang {
+    display: none; }
 
 .bckgnd_top_home {
   max-width: 100%;
@@ -160,30 +110,116 @@ header {
   min-height: 350px; }
 
 /*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 300px) and (min-width: 800px) {
+  header {
+    grid-template-rows: 150px 150px;
+    grid-template-columns: 420px 1fr 1fr;
+    grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c"; }
+    header h1 {
+      font-size: 10rem;
+      line-height: 10rem;
+      padding-top: 4rem; }
+    header .reduc_h1 {
+      font-size: 10rem;
+      margin: 2rem 0 0 0; }
+    header p {
+      text-align: center;
+      font-size: 4rem;
+      line-height: 4rem; }
+    header .reduc_p {
+      color: #444;
+      background-color: inherit;
+      margin: 0;
+      font-size: 4rem;
+      line-height: 4rem; }
+    header img {
+      height: 180px;
+      margin: 0 auto; }
+    header .reduc_logo {
+      height: 180px;
+      margin: 0 auto; }
+    header nav {
+      color: #fff;
+      background-color: inherit;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem; }
+      header nav a:hover {
+        color: #BA8A88; }
+      header nav #menu_icon {
+        display: block;
+        color: #d01c63;
+        background-color: inherit;
+        text-align: right;
+        margin: 2rem; }
+        header nav #menu_icon .fa-2x {
+          font-size: 8rem; }
+      header nav .show {
+        display: grid;
+        position: absolute;
+        right: 0;
+        top: 200px;
+        font-size: 4rem;
+        line-height: 4.5rem; }
+      header nav .reduc_show {
+        left: 0;
+        width: 100%; }
+      header nav ul {
+        display: none;
+        background-color: #fff;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#fff, endColorstr=transparent);
+        background-image: -moz-linear-gradient(center top, #fff, transparent);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(transparent));
+        padding: 4rem 2rem;
+        float: right; }
+        header nav ul li {
+          padding: 1rem; }
+  .reduc_header {
+    grid-template-rows: 150px 150px;
+    grid-template-columns: 420px 1fr 1fr;
+    grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c"; }
+  .origin_header {
+    background: none;
+    transition: all 0.6s; }
+  .scroll_header {
+    background: linear-gradient(#fff 90%, transparent);
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    padding: 0; } }
+
+/*******************************************************************************/
 /* TABLETTES *******************************************************************/
 /*******************************************************************************/
-@media all and (min-device-width: 700px) and (min-width: 700px) {
+@media all and (min-device-width: 700px) and (min-width: 800px) {
   header {
-    grid-template-rows: 12rem 6rem 6rem;
+    grid-template-rows: 12rem 8rem 6rem;
     grid-template-columns: 1fr 33rem 33rem 1fr;
-    grid-template-areas: "a  logo    nom_h1  lang" "a  logo    nom_p   d" "a  menu    menu    d"; }
+    grid-template-areas: "a  logo    nom_h1  lang" "a  logo    nom_p   d" "a  menu    menu    d"; }
+    header.reduc_header {
+      grid-template-rows: 8rem 5rem 7rem;
+      grid-template-columns: 2rem 26rem 12rem 1fr 55rem;
+      grid-template-areas: "a nom_h1 logo d lang" "a nom_p logo d menu"; }
     header h1 {
       font-size: 8rem;
       text-align: left; }
-    header .reduc_h1 {
-      font-size: 8rem;
-      margin: 2rem 0 0 1rem;
-      padding: 0; }
+      header h1.reduc_h1 {
+        font-size: 6rem;
+        margin: 1rem 0 0 1rem;
+        padding: 0; }
     header p {
       font-size: 3rem;
       line-height: 3rem;
       text-align: left; }
-    header .reduc_p {
-      font-size: 3rem;
-      line-height: 3rem;
-      margin-left: 1rem; }
+      header p.reduc_p {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-left: 1rem; }
     header .reduc_logo {
-      height: 15rem; }
+      height: 10rem; }
     header nav {
       display: grid;
       text-align: center; }
@@ -194,13 +230,17 @@ header {
         padding: 0;
         width: 100%;
         float: none;
-        font-size: 2.5rem; }
+        font-size: 2rem; }
+        header nav ul.reduc_show a {
+          color: #d01c63; }
+          header nav ul.reduc_show a:hover {
+            color: #BA8A88; }
         header nav ul li a {
           color: #fff; }
       header nav #menu_icon {
         display: none; }
-    header .reduc_nav {
-      color: #444; }
+      header nav.reduc_nav {
+        color: #444; }
     header .lang {
       display: block;
       grid-area: lang;
@@ -214,14 +254,10 @@ header {
           width: 3rem;
           height: 3rem;
           margin: 1rem 1rem 0 0; }
-  .reduc_header {
-    grid-template-rows: 10rem 5rem 7rem;
-    grid-template-columns: 5rem 35rem 10rem 1fr 13rem;
-    grid-template-areas: "a  nom_h1  logo    d   lang" "a  nom_p   logo    d   c" "menu menu  menu    menu  menu"; }
   .bckgnd_top {
     max-width: 100%;
     object-fit: cover;
-    min-height: 27rem; } }
+    min-height: 32rem; } }
 
 section {
   margin: 3rem; }
@@ -255,6 +291,39 @@ section {
   margin: 4rem;
   display: inline-block; }
 
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+/*@media all and (min-device-width: 700px) and (min-width: 700px) {
+  section{
+    display: grid;
+    grid-template-columns: 10fr 350px;
+    grid-template-areas:
+            "titre  titre"
+            "hr     hr"
+            "texte  images";
+
+    .titre_section{
+      grid-area: titre;
+    }
+
+    .texte_section{
+      grid-area: texte;
+    }
+
+    .image_section{
+      grid-area: images;
+    }
+
+    hr{
+      grid-area: hr;
+    }
+
+    &#photos{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}*/
 .table_prix {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -321,7 +390,7 @@ body {
 h1 {
   font-family: "barutablack", sans-serif;
   font-size: 10rem;
-  line-height: 10rem;
+  line-height: 8rem;
   color: #d01c63;
   background-color: inherit; }
 

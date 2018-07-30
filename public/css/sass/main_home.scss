@@ -45,3 +45,37 @@ section {
   display: inline-block;
 }
 
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+
+/*@media all and (min-device-width: 700px) and (min-width: 700px) {
+  section{
+    display: grid;
+    grid-template-columns: 10fr 350px;
+    grid-template-areas:
+            "titre  titre"
+            "hr     hr"
+            "texte  images";
+
+    .titre_section{
+      grid-area: titre;
+    }
+
+    .texte_section{
+      grid-area: texte;
+    }
+
+    .image_section{
+      grid-area: images;
+    }
+
+    hr{
+      grid-area: hr;
+    }
+
+    &#photos{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}*/
