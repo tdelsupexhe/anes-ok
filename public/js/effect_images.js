@@ -1,6 +1,21 @@
 $( document ).ready(function() {
 
     // ***************** HOME PAGE *****************
+    // ***************** social logo
+    $("#lang_fr").flip({
+        axis: 'x',
+        trigger: 'hover'
+    });
+
+    $("#lang_nl").flip({
+        axis: 'x',
+        trigger: 'hover'
+    });
+
+    $("#lang_uk").flip({
+        axis: 'x',
+        trigger: 'hover'
+    });
 
     // ***************** image des 3 anes
     $('#image_decouvrir').hover(function () {

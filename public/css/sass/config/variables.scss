@@ -11,13 +11,13 @@ $aHover: #BA8A88;
 // polices
 $tailleTexte:     1.4rem;
 $lineHeightText:  2rem;
-$tailleH1:        10rem;
+$tailleH1:        8rem;
 $lineHeightH1:    $tailleH1;
 $tailleH2:        8rem;
 $lineHeightH2:    $tailleH2;
 $tailleH3:        6rem;
 $lineHeightH3:    $tailleH3;
-$tailleTextHeader:4rem;
+$tailleTextHeader:3rem;
 $tailleB:         1.5rem;
 $tailleForm:      4rem;
 $tailleMenuMobile:8rem;
@@ -32,23 +32,33 @@ $margesGenerales: 3rem;
 // graphique
 $widthHr: 100px;
 
+//points de rupture
+$minSmart:    300px;
+$minTab:      700px;
+$minDesk:     1000px;
+
 /*******************************************************************************/
 /* MIN *************************************************************************/
 /*******************************************************************************/
-$tailleH1Min: $tailleH1/2;
-$lineHeightH1Min:    $tailleH1Min;
-$tailleTextHeaderMin : $tailleTextHeader/2;
-
+$tailleH1Min:           $tailleH1/2;
+$lineHeightH1Min:       $tailleH1Min;
+$tailleH2Min:           $tailleH2/2;
+$tailleH3Min:           $tailleH3/2;
+$lineHeightH3Min:       $tailleH3Min;
+$lineHeightH2Min:       $tailleH2Min;
+$tailleTextHeaderMin :  $tailleTextHeader/2;
 
 /*******************************************************************************/
 /* TABLETTES *******************************************************************/
 /*******************************************************************************/
 
-$tailleH1Tab: ($tailleH1/5)*4;
-$lineHeightH1: $tailleH1Tab;
+$tailleH1Tab:         ($tailleH1/5)*4;
+$lineHeightH1:        $tailleH1Tab;
 $tailleTextHeaderTab: ($tailleTextHeader/4)*3;
-$tailleH2Tab:        ($tailleH2/8)*5;
-$lineHeightH2:    $tailleH2;
+$tailleH2Tab:         ($tailleH2/8)*5;
+$lineHeightH2:        $tailleH2;
+$tailleH3Tab:         $tailleH3/2;
+$lineHeightH3Tab:     $tailleH3Tab;
 
 /*******************************************************************************/
 /* DESKTOP *********************************************************************/

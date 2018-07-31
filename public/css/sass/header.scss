@@ -1,9 +1,8 @@
-header{
+header {
   display: grid;
-  grid-template-rows: 60px 50px;
-  grid-template-columns: 205px 120px 1fr;
-  grid-template-areas:  "nom_h1  logo    d   menu"
-                        "nom_p   logo    d   c";
+  grid-template-rows: 5rem 5rem;
+  grid-template-columns: 17.5rem 10rem 1fr;
+  grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c";
   position: fixed;
   width: 100%;
   left: 50%;
@@ -16,6 +15,11 @@ header{
     font-size: $tailleH1Min;
     line-height: $lineHeightH1Min;
     padding-top: $tailleH1/5;
+    padding-left: $tailleH1Min/5;
+
+    &.reduc_h1 {
+      font-size: $tailleH1Min;
+    }
   }
 
   p {
@@ -23,151 +27,71 @@ header{
     font-size: $tailleTextHeaderMin;
     color: $blanc;
     background-color: inherit;
+    padding-left: $tailleH1/10;
+
+    &.reduc_p {
+      color: $gris;
+      background-color: inherit;
+      margin: 0;
+    }
   }
 
   img {
     grid-area: logo;
     display: block;
-    height: 100px;
+    height: 8rem;
   }
 
   nav {
     grid-area: menu;
+    color: $blanc;
+    background-color: inherit;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: $tailleH1/100;
+
+    a:hover {
+      color: $aHover;
+    }
 
     #menu_icon {
       display: block;
-      padding: 1rem;
       color: $rose;
       background-color: inherit;
+      text-align: right;
+      margin: $tailleH1/5;
     }
 
-    ul{
+    ul {
       display: none;
+      @include gradient($blanc, transparent);
+      padding: $tailleH1/5;
+      float: right;
+
+      &.show {
+        display: grid;
+        position: absolute;
+        right: 0;
+        top: $tailleH1;
+        font-size: $tailleTextHeaderMin;
+        line-height: $tailleTextHeaderMin+0.5rem;
+      }
+
+      &.reduc_show {
+        left: 0;
+        width: 100%;
+      }
+
+      li {
+        padding: $tailleH1/10;
+      }
     }
 
   }
 
   .lang {
     display: none;
-  }
-}
-
-.bckgnd_top_home{
-  max-width: 100%;
-  min-height: 420px;
-  object-fit: cover;
-}
-
-.bckgnd_top{
-  max-width: 100%;
-  object-fit: cover;
-  min-height:350px;
-}
-
-/*******************************************************************************/
-/* SMARTPHONE ******************************************************************/
-/*******************************************************************************/
-@media all and (min-device-width: 300px) and (min-width: 800px) {
-  header {
-    grid-template-rows: 150px 150px;
-    grid-template-columns: 420px 1fr 1fr;
-    grid-template-areas:  "nom_h1  logo    d   menu"
-                          "nom_p   logo    d   c";
-
-    h1 {
-      font-size: $tailleH1;
-      line-height: $tailleH1;
-      padding-top: ($tailleH1/5)*2;
-    }
-
-    .reduc_h1 {
-      font-size: $tailleH1;
-      margin: 2rem 0 0 0;
-    }
-
-    p {
-      text-align: center;
-      font-size: $tailleTextHeader;
-      line-height: $tailleTextHeader;
-    }
-
-    .reduc_p {
-      color: $gris;
-      background-color: inherit;
-      margin: 0;
-      font-size: $tailleTextHeader;
-      line-height: $tailleTextHeader;
-    }
-
-    img {
-      height: 180px;
-      margin: 0 auto;
-    }
-
-    .reduc_logo {
-      height: 180px;
-      margin: 0 auto;
-    }
-
-    nav {
-      color: $blanc;
-      background-color: inherit;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2rem;
-
-      a:hover {
-        color: $aHover;
-      }
-
-      #menu_icon {
-        display: block;
-        color: $rose;
-        background-color: inherit;
-        text-align: right;
-        margin: 2rem;
-
-        .fa-2x {
-          font-size: $tailleMenuMobile;
-        }
-      }
-
-      .show {
-        display: grid;
-        position: absolute;
-        right: 0;
-        top: 200px;
-        font-size: $tailleTextHeader;
-        line-height: $tailleTextHeader+0.5rem;
-      }
-
-      .reduc_show {
-        left: 0;
-        width: 100%;
-      }
-
-      ul {
-        display: none;
-        @include gradient($blanc, transparent);
-        padding: 4rem 2rem;
-        float: right;
-
-        li {
-          padding: 1rem;
-        }
-      }
-
-    }
-
-  }
-
-  &.reduc_header{
-    grid-template-rows: 150px 150px;
-    grid-template-columns: 420px 1fr 1fr;
-    grid-template-areas:
-            "nom_h1  logo    d   menu"
-            "nom_p   logo    d   c";
   }
 
   &.origin_header {
@@ -182,121 +106,195 @@ header{
   }
 }
 
-  /*******************************************************************************/
-  /* TABLETTES *******************************************************************/
-  /*******************************************************************************/
-  @media all and (min-device-width: 700px) and (min-width: 800px) {
-    header {
-      grid-template-rows: 12rem 8rem 6rem;
-      grid-template-columns: 1fr 33rem 33rem 1fr;
-      grid-template-areas:  "a  logo    nom_h1  lang"
-      "a  logo    nom_p   d"
-      "a  menu    menu    d";
+.bckgnd_top_home{
+  max-width: 100%;
+  min-height: 42rem;
+  object-fit: cover;
+}
 
-      &.reduc_header {
-        grid-template-rows: 8rem 5rem 7rem;
-        grid-template-columns: 2rem 26rem 12rem 1fr 55rem;
-        grid-template-areas:  "a nom_h1 logo d lang"
-        "a nom_p logo d menu";
-      }
+.bckgnd_top{
+  max-width: 100%;
+  object-fit: cover;
+  min-height:15rem;
+}
 
-      h1 {
-        font-size: $tailleH1Tab;
-        text-align: left;
+/*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minSmart) and (min-width: $minTab+100) {
+  header {
+    grid-template-rows: 10.5rem 8rem;
+    grid-template-columns: 33.5rem 1fr 1fr;
 
-        &.reduc_h1 {
-          font-size: ($tailleH1Tab/4)*3;
-          margin: 1rem 0 0 1rem;
-          padding: 0;
-        }
-      }
+    &.reduc_header{
+      grid-template-rows: 10.5rem 8rem;
+    }
 
+    h1 {
+      font-size: $tailleH1;
+      line-height: $tailleH1;
+      padding-top: ($tailleH1/5)*2;
 
-      p {
-        font-size: $tailleTextHeaderTab;
-        line-height: $tailleTextHeaderTab;
-        text-align: left;
-
-        &.reduc_p {
-          font-size: ($tailleTextHeaderTab/3)*2;
-          line-height: ($tailleTextHeaderTab/3)*2;
-          margin-left: 1rem;
-        }
-      }
-
-      .reduc_logo {
-        height: 10rem;
-      }
-
-      nav {
-        display: grid;
-        text-align: center;
-
-        ul {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          background: none;
-          padding: 0;
-          width: 100%;
-          float: none;
-          font-size: $tailleH1/5;
-
-          &.reduc_show{
-            a{
-              color: $rose;
-
-              &:hover{
-                color: $aHover;
-              }
-            }
-          }
-
-          li {
-            a {
-              color: $blanc;
-            }
-          }
-        }
-
-        #menu_icon {
-          display: none;
-        }
-
-        &.reduc_nav {
-          color: $gris;
-        }
-      }
-
-      .lang {
-        display: block;
-        grid-area: lang;
-        margin-right: 1rem;
-
-        ul {
-          display: grid;
-          grid-template-columns: 1fr repeat(3, 4rem);
-
-          #first_lang {
-            grid-column-start: 2;
-          }
-
-          li {
-            a {
-              img {
-                width: 3rem;
-                height: 3rem;
-                margin: 1rem 1rem 0 0;
-              }
-            }
-          }
-        }
+      &.reduc_h1 {
+        font-size: $tailleH1;
       }
     }
 
-    .bckgnd_top {
-      max-width: 100%;
-      object-fit: cover;
-      min-height: 32rem;
+    p {
+      font-size: $tailleTextHeader;
+
+      .reduc_p {
+        font-size: $tailleTextHeader;
+        line-height: $tailleTextHeader;
+      }
+    }
+
+    img {
+      height: 14rem;
+    }
+
+    nav {
+      #menu_icon {
+        .fa-2x {
+          font-size: $tailleMenuMobile;
+        }
+      }
+
+      ul{
+        &.show{
+          top: 16rem;
+          font-size: $tailleTextHeader;
+          line-height: $tailleTextHeader+0.5rem;
+        }
+      }
     }
   }
+}
 
+.bckgnd_top{
+  min-height:25rem;
+}
+
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minTab) and (min-width: $minTab+100) {
+  header {
+    grid-template-rows: 10rem 8rem 6rem;
+    grid-template-columns: 1fr 20rem 30rem 1fr;
+    grid-template-areas:  "a  logo    nom_h1  lang"
+    "a  logo    nom_p   d"
+    "a  menu    menu    d";
+
+    &.reduc_header {
+      grid-template-rows: 8rem 6rem;
+      grid-template-columns: 2rem 21rem 12rem 1fr 55rem;
+      grid-template-areas:  "a nom_h1 logo d lang"
+      "a nom_p  logo d menu";
+    }
+
+    h1 {
+      font-size: $tailleH1Tab;
+      text-align: left;
+
+      &.reduc_h1 {
+        font-size: ($tailleH1Tab/4)*3;
+        margin: 1rem 0 0 1rem;
+        padding: 0;
+      }
+    }
+
+    p {
+      font-size: $tailleTextHeaderTab;
+      line-height: $tailleTextHeaderTab;
+      text-align: left;
+
+      &.reduc_p {
+        font-size: ($tailleTextHeaderTab/3)*2;
+        line-height: ($tailleTextHeaderTab/3)*2;
+        margin-left: 1rem;
+      }
+    }
+
+    img{
+      height: 13rem;
+    }
+
+    .reduc_logo {
+      height: 10rem;
+    }
+
+    nav {
+      text-align: center;
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: none;
+        padding: 0;
+        width: 100%;
+        float: none;
+        font-size: $tailleH1/5;
+
+        &.reduc_show{
+          a{
+            color: $rose;
+
+            &:hover{
+              color: $aHover;
+            }
+          }
+        }
+
+        li {
+          a {
+            color: $blanc;
+          }
+        }
+      }
+
+      #menu_icon {
+        display: none;
+      }
+
+      &.reduc_nav {
+        color: $gris;
+      }
+    }
+
+    .lang {
+      display: grid;
+      grid-template-columns: 1fr repeat(3, 3rem);
+      grid-area: lang;
+      margin-right: 1rem;
+
+      .lang_ico {
+        a {
+          img {
+            width: 2rem;
+            height: 2rem;
+            margin: 1rem 1rem 0 0;
+          }
+        }
+      }
+
+      #lang_fr{
+        grid-column-start: 2;
+      }
+    }
+  }
+}
+
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minDesk) and (min-width: $minDesk) {
+  header{
+    grid-template-rows: 10rem 6rem;
+    grid-template-columns: 2rem 27rem 17rem 1fr 50rem;
+    grid-template-areas:  "a  nom_h1  logo  d     lang"
+                          "a  nom_p   logo  d     c"
+                          "e  e       e     e     menu";
+  }
+
+}

@@ -1,11 +1,16 @@
-.footer{
+footer{
   background: $bleu url("/img/fond-footer-smart.jpg") repeat-x bottom;
   color: inherit;
-  min-height: 720px;
+  min-height: 72rem;
   overflow: hidden;
 
   .footer_child{
     margin: $margesGenerales;
+
+    h3{
+      font-size: $tailleH3Min;
+      line-height: $lineHeightH3Min;
+    }
 
     p{
       margin-left: 0;
@@ -25,6 +30,39 @@
   .social_logo{
     margin: 1rem 1rem 0 0;
     display: inline-block;
+
+    img{
+      width: 4rem;
+    }
   }
 }
 
+/*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minSmart) and (min-width: $minTab+100) {
+
+}
+
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minTab) and (min-width: $minTab+100) {
+  footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 32rem;
+
+    .footer_child {
+      display: block;
+      margin: $margesGenerales auto;
+    }
+  }
+}
+
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minDesk) and (min-width: $minDesk) {
+
+}

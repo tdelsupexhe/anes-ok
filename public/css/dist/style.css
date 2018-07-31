@@ -64,9 +64,9 @@ table {
 /*******************************************************************************/
 header {
   display: grid;
-  grid-template-rows: 60px 50px;
-  grid-template-columns: 205px 120px 1fr;
-  grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c";
+  grid-template-rows: 5rem 5rem;
+  grid-template-columns: 17.5rem 10rem 1fr;
+  grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c";
   position: fixed;
   width: 100%;
   left: 50%;
@@ -75,153 +75,148 @@ header {
   z-index: 999; }
   header h1 {
     grid-area: nom_h1;
-    font-size: 5rem;
-    line-height: 5rem;
-    padding-top: 2rem; }
+    font-size: 4rem;
+    line-height: 4rem;
+    padding-top: 1.6rem;
+    padding-left: 0.8rem; }
+    header h1.reduc_h1 {
+      font-size: 4rem; }
   header p {
     grid-area: nom_p;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #fff;
-    background-color: inherit; }
+    background-color: inherit;
+    padding-left: 0.8rem; }
+    header p.reduc_p {
+      color: #444;
+      background-color: inherit;
+      margin: 0; }
   header img {
     grid-area: logo;
     display: block;
-    height: 100px; }
+    height: 8rem; }
   header nav {
-    grid-area: menu; }
+    grid-area: menu;
+    color: #fff;
+    background-color: inherit;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem; }
+    header nav a:hover {
+      color: #BA8A88; }
     header nav #menu_icon {
       display: block;
-      padding: 1rem;
       color: #d01c63;
-      background-color: inherit; }
+      background-color: inherit;
+      text-align: right;
+      margin: 1.6rem; }
     header nav ul {
-      display: none; }
+      display: none;
+      background-color: #fff;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#fff, endColorstr=transparent);
+      background-image: -moz-linear-gradient(center top, #fff, transparent);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(transparent));
+      padding: 1.6rem;
+      float: right; }
+      header nav ul.show {
+        display: grid;
+        position: absolute;
+        right: 0;
+        top: 8rem;
+        font-size: 1.5rem;
+        line-height: 2rem; }
+      header nav ul.reduc_show {
+        left: 0;
+        width: 100%; }
+      header nav ul li {
+        padding: 0.8rem; }
   header .lang {
     display: none; }
+  header.origin_header {
+    background: none;
+    transition: all 0.6s; }
+  header.scroll_header {
+    background: linear-gradient(#fff 90%, transparent);
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    padding: 0; }
 
 .bckgnd_top_home {
   max-width: 100%;
-  min-height: 420px;
+  min-height: 42rem;
   object-fit: cover; }
 
 .bckgnd_top {
   max-width: 100%;
   object-fit: cover;
-  min-height: 350px; }
+  min-height: 15rem; }
 
 /*******************************************************************************/
 /* SMARTPHONE ******************************************************************/
 /*******************************************************************************/
 @media all and (min-device-width: 300px) and (min-width: 800px) {
   header {
-    grid-template-rows: 150px 150px;
-    grid-template-columns: 420px 1fr 1fr;
-    grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c"; }
+    grid-template-rows: 10.5rem 8rem;
+    grid-template-columns: 33.5rem 1fr 1fr; }
+    header.reduc_header {
+      grid-template-rows: 10.5rem 8rem; }
     header h1 {
-      font-size: 10rem;
-      line-height: 10rem;
-      padding-top: 4rem; }
-    header .reduc_h1 {
-      font-size: 10rem;
-      margin: 2rem 0 0 0; }
+      font-size: 8rem;
+      line-height: 8rem;
+      padding-top: 3.2rem; }
+      header h1.reduc_h1 {
+        font-size: 8rem; }
     header p {
-      text-align: center;
-      font-size: 4rem;
-      line-height: 4rem; }
-    header .reduc_p {
-      color: #444;
-      background-color: inherit;
-      margin: 0;
-      font-size: 4rem;
-      line-height: 4rem; }
+      font-size: 3rem; }
+      header p .reduc_p {
+        font-size: 3rem;
+        line-height: 3rem; }
     header img {
-      height: 180px;
-      margin: 0 auto; }
-    header .reduc_logo {
-      height: 180px;
-      margin: 0 auto; }
-    header nav {
-      color: #fff;
-      background-color: inherit;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2rem; }
-      header nav a:hover {
-        color: #BA8A88; }
-      header nav #menu_icon {
-        display: block;
-        color: #d01c63;
-        background-color: inherit;
-        text-align: right;
-        margin: 2rem; }
-        header nav #menu_icon .fa-2x {
-          font-size: 8rem; }
-      header nav .show {
-        display: grid;
-        position: absolute;
-        right: 0;
-        top: 200px;
-        font-size: 4rem;
-        line-height: 4.5rem; }
-      header nav .reduc_show {
-        left: 0;
-        width: 100%; }
-      header nav ul {
-        display: none;
-        background-color: #fff;
-        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#fff, endColorstr=transparent);
-        background-image: -moz-linear-gradient(center top, #fff, transparent);
-        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(transparent));
-        padding: 4rem 2rem;
-        float: right; }
-        header nav ul li {
-          padding: 1rem; }
-  .reduc_header {
-    grid-template-rows: 150px 150px;
-    grid-template-columns: 420px 1fr 1fr;
-    grid-template-areas: "nom_h1  logo    d   menu" "nom_p   logo    d   c"; }
-  .origin_header {
-    background: none;
-    transition: all 0.6s; }
-  .scroll_header {
-    background: linear-gradient(#fff 90%, transparent);
-    transition: all 0.6s ease;
-    -webkit-transition: all 0.6s ease;
-    -moz-transition: all 0.6s ease;
-    padding: 0; } }
+      height: 14rem; }
+    header nav #menu_icon .fa-2x {
+      font-size: 8rem; }
+    header nav ul.show {
+      top: 16rem;
+      font-size: 3rem;
+      line-height: 3.5rem; } }
+
+.bckgnd_top {
+  min-height: 25rem; }
 
 /*******************************************************************************/
 /* TABLETTES *******************************************************************/
 /*******************************************************************************/
 @media all and (min-device-width: 700px) and (min-width: 800px) {
   header {
-    grid-template-rows: 12rem 8rem 6rem;
-    grid-template-columns: 1fr 33rem 33rem 1fr;
+    grid-template-rows: 10rem 8rem 6rem;
+    grid-template-columns: 1fr 20rem 30rem 1fr;
     grid-template-areas: "a  logo    nom_h1  lang" "a  logo    nom_p   d" "a  menu    menu    d"; }
     header.reduc_header {
-      grid-template-rows: 8rem 5rem 7rem;
-      grid-template-columns: 2rem 26rem 12rem 1fr 55rem;
-      grid-template-areas: "a nom_h1 logo d lang" "a nom_p logo d menu"; }
+      grid-template-rows: 8rem 6rem;
+      grid-template-columns: 2rem 21rem 12rem 1fr 55rem;
+      grid-template-areas: "a nom_h1 logo d lang" "a nom_p  logo d menu"; }
     header h1 {
-      font-size: 8rem;
+      font-size: 6.4rem;
       text-align: left; }
       header h1.reduc_h1 {
-        font-size: 6rem;
+        font-size: 4.8rem;
         margin: 1rem 0 0 1rem;
         padding: 0; }
     header p {
-      font-size: 3rem;
-      line-height: 3rem;
+      font-size: 2.25rem;
+      line-height: 2.25rem;
       text-align: left; }
       header p.reduc_p {
-        font-size: 2rem;
-        line-height: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
         margin-left: 1rem; }
+    header img {
+      height: 13rem; }
     header .reduc_logo {
       height: 10rem; }
     header nav {
-      display: grid;
       text-align: center; }
       header nav ul {
         display: grid;
@@ -230,7 +225,7 @@ header {
         padding: 0;
         width: 100%;
         float: none;
-        font-size: 2rem; }
+        font-size: 1.6rem; }
         header nav ul.reduc_show a {
           color: #d01c63; }
           header nav ul.reduc_show a:hover {
@@ -242,26 +237,31 @@ header {
       header nav.reduc_nav {
         color: #444; }
     header .lang {
-      display: block;
+      display: grid;
+      grid-template-columns: 1fr repeat(3, 3rem);
       grid-area: lang;
       margin-right: 1rem; }
-      header .lang ul {
-        display: grid;
-        grid-template-columns: 1fr repeat(3, 4rem); }
-        header .lang ul #first_lang {
-          grid-column-start: 2; }
-        header .lang ul li a img {
-          width: 3rem;
-          height: 3rem;
-          margin: 1rem 1rem 0 0; }
-  .bckgnd_top {
-    max-width: 100%;
-    object-fit: cover;
-    min-height: 32rem; } }
+      header .lang .lang_ico a img {
+        width: 2rem;
+        height: 2rem;
+        margin: 1rem 1rem 0 0; }
+      header .lang #lang_fr {
+        grid-column-start: 2; } }
+
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 1000px) and (min-width: 1000px) {
+  header {
+    grid-template-rows: 10rem 6rem;
+    grid-template-columns: 2rem 27rem 17rem 1fr 50rem;
+    grid-template-areas: "a  nom_h1  logo  d     lang" "a  nom_p   logo  d     c" "e  e       e     e     menu"; } }
 
 section {
   margin: 3rem; }
   section h2 {
+    font-size: 4rem;
+    line-height: 4rem;
     text-align: center; }
   section p {
     margin-bottom: 1rem; }
@@ -275,7 +275,8 @@ section {
   #photos figure {
     background: #d01c63;
     color: inherit; }
-    #photos figure width img {
+    #photos figure img {
+      max-width: 100%;
       opacity: 1;
       background: none;
       transition: all 0.3s ease-in-out;
@@ -286,44 +287,67 @@ section {
 
 /** images proprio **/
 .photos_proprio {
-  width: 20rem;
-  height: 20rem;
-  margin: 4rem;
   display: inline-block; }
+  .photos_proprio img {
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem; }
+
+/*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 300px) and (min-width: 800px) {
+  section {
+    /** images proprio **/ }
+    section h2 {
+      font-size: 8rem;
+      line-height: 8rem; }
+    section .photos_proprio img {
+      width: 20rem;
+      height: 20rem;
+      margin: 4rem; } }
 
 /*******************************************************************************/
 /* TABLETTES *******************************************************************/
 /*******************************************************************************/
-/*@media all and (min-device-width: 700px) and (min-width: 700px) {
-  section{
+@media all and (min-device-width: 700px) and (min-width: 800px) {
+  section {
     display: grid;
     grid-template-columns: 10fr 350px;
-    grid-template-areas:
-            "titre  titre"
-            "hr     hr"
-            "texte  images";
+    grid-template-areas: "titre  titre" "hr     hr" "texte  images"; }
+    section .titre_section {
+      grid-area: titre; }
+    section .texte_section {
+      grid-area: texte; }
+    section .image_section {
+      grid-area: images; }
+    section hr {
+      grid-area: hr; }
+    section h2 {
+      font-size: 5rem;
+      line-height: 5rem; }
+    section#photos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); }
+    section .photos_proprio img {
+      width: 15rem;
+      height: 15rem;
+      margin: 1rem; } }
 
-    .titre_section{
-      grid-area: titre;
-    }
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 1000px) and (min-width: 1000px) {
+  section {
+    grid-template-columns: 3fr 10fr 3fr 3fr;
+    grid-template-areas: "a  titre  titre    b" "a  hr     hr       b" "a  texte  images   b"; }
+    section#photos {
+      grid-template-columns: repeat(4, 1fr); }
+    section .photos_proprio img {
+      width: 12rem;
+      height: 12rem;
+      margin: 1rem; } }
 
-    .texte_section{
-      grid-area: texte;
-    }
-
-    .image_section{
-      grid-area: images;
-    }
-
-    hr{
-      grid-area: hr;
-    }
-
-    &#photos{
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-}*/
 .table_prix {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -356,14 +380,17 @@ section {
   background-color: #697747;
   color: #fff; }
 
-.footer {
+footer {
   background: #386066 url("/img/fond-footer-smart.jpg") repeat-x bottom;
   color: inherit;
-  min-height: 720px;
+  min-height: 72rem;
   overflow: hidden; }
-  .footer .footer_child {
+  footer .footer_child {
     margin: 3rem; }
-    .footer .footer_child p {
+    footer .footer_child h3 {
+      font-size: 3rem;
+      line-height: 3rem; }
+    footer .footer_child p {
       margin-left: 0;
       color: #fff; }
 
@@ -375,7 +402,27 @@ section {
 #footer_3 .social_logo {
   margin: 1rem 1rem 0 0;
   display: inline-block; }
+  #footer_3 .social_logo img {
+    width: 4rem; }
 
+/*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 700px) and (min-width: 800px) {
+  footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 32rem; }
+    footer .footer_child {
+      display: block;
+      margin: 3rem auto; } }
+
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
 html {
   font-size: 62.5%; }
 
@@ -389,8 +436,8 @@ body {
 /** FORMATAGE TEXTE **/
 h1 {
   font-family: "barutablack", sans-serif;
-  font-size: 10rem;
-  line-height: 8rem;
+  font-size: 8rem;
+  line-height: 6.4rem;
   color: #d01c63;
   background-color: inherit; }
 

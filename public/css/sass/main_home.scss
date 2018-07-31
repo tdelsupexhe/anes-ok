@@ -2,6 +2,8 @@ section {
   margin: $margesGenerales;
 
   h2 {
+    font-size: $tailleH2Min;
+    line-height: $lineHeightH2Min;
     text-align: center;
   }
 
@@ -12,70 +14,125 @@ section {
   img {
     @include img-center;
   }
-
 }
 
 /** effet sur les images portfolio au survol **/
-#photos{
+#photos {
   margin: $margesGenerales 0;
-  figure{
+  figure {
     background: $rose;
     color: inherit;
-    width
-
-    img{
+    img {
+      max-width: 100%;
       opacity: 1;
       background: none;
       @include transition(all, .3s, ease-in-out);
     }
 
-    &:hover{
-      img{
-        opacity:0.5;
+    &:hover {
+      img {
+        opacity: 0.5;
       }
     }
   }
 }
 
 /** images proprio **/
-.photos_proprio{
-  width: 20rem;
-  height: 20rem;
-  margin: 4rem;
+.photos_proprio {
   display: inline-block;
+
+  img{
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem;
+  }
+
+}
+
+/*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minSmart) and (min-width: $minTab+100) {
+  section{
+    h2 {
+      font-size: $tailleH2;
+      line-height: $lineHeightH2;
+    }
+
+    /** images proprio **/
+    .photos_proprio {
+      img{
+        width: 20rem;
+        height: 20rem;
+        margin: 4rem;
+      }
+    }
+  }
 }
 
 /*******************************************************************************/
 /* TABLETTES *******************************************************************/
 /*******************************************************************************/
-
-/*@media all and (min-device-width: 700px) and (min-width: 700px) {
-  section{
+@media all and (min-device-width: $minTab) and (min-width: $minTab+100) {
+  section {
     display: grid;
     grid-template-columns: 10fr 350px;
-    grid-template-areas:
-            "titre  titre"
-            "hr     hr"
-            "texte  images";
+    grid-template-areas: "titre  titre" "hr     hr" "texte  images";
 
-    .titre_section{
+    .titre_section {
       grid-area: titre;
     }
 
-    .texte_section{
+    .texte_section {
       grid-area: texte;
     }
 
-    .image_section{
+    .image_section {
       grid-area: images;
     }
 
-    hr{
+    hr {
       grid-area: hr;
     }
 
-    &#photos{
-      grid-template-columns: 1fr 1fr;
+    h2 {
+      font-size: ($tailleH2/8)*5;
+      line-height: ($lineHeightH2/8)*5;
+    }
+
+    &#photos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photos_proprio {
+      img {
+        width: 15rem;
+        height: 15rem;
+        margin: 1rem;
+      }
     }
   }
-}*/
+}
+
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minDesk) and (min-width: $minDesk) {
+  section {
+    grid-template-columns: 3fr 10fr 3fr 3fr;
+    grid-template-areas: "a  titre  titre    b" "a  hr     hr       b" "a  texte  images   b";
+
+    &#photos {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .photos_proprio {
+      img {
+        width: 12rem;
+        height: 12rem;
+        margin: 1rem;
+      }
+    }
+  }
+}
