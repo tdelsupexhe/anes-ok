@@ -18,6 +18,10 @@
 @import "main";
 @import "footer";
 
+* {
+  box-sizing: border-box;
+}
+
 html{
   font-size: 62.5%;
 }
@@ -92,7 +96,7 @@ hr{
 
 .champs{
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   color: $gris;
   background-color: $blanc;
   background-clip: padding-box;
@@ -123,8 +127,8 @@ label{
 button{
   @extend .tailleInputFormulaire;
   margin: $margesGenerales 0;
-  padding: $margesGenerales;
-  width: 25rem;
+  padding: ($margesGenerales/3)*2;
+  width: 15rem;
   color: $gris;
   background-color: $grisClair;
   border: 1px solid $grisClair;

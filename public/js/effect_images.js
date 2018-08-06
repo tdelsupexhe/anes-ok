@@ -2,8 +2,8 @@ $( document ).ready(function() {
 
     // ***************** HOME PAGE *****************
     // ***************** social logo
-    $("#lang_fr").flip({
-        axis: 'x',
+   /* $("#lang_fr").flip({
+        axis: 'y',
         trigger: 'hover'
     });
 
@@ -16,7 +16,7 @@ $( document ).ready(function() {
         axis: 'x',
         trigger: 'hover'
     });
-
+*/
     // ***************** image des 3 anes
     $('#image_decouvrir').hover(function () {
         $('#anes_decouvrir').effect("bounce", { direction:'up', times:5 }, 800);

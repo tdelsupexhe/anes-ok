@@ -1,41 +1,87 @@
-.table_prix{
+.table_prix {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: $margesGenerales;
 
-  .prix{
+  .prix {
     display: grid;
-    grid-template-rows: repeat(2, 10rem);
+    grid-template-rows: repeat(2, 5rem);
+    width: 10rem;
     text-align: center;
     color: #fff;
     background-color: inherit;
-    width: 20rem;
     margin: 0 auto;
 
-    .euros{
+    .euros {
       font-family: barutablack, sans-serif;
-      font-size: 7rem;
-      margin-top: 7rem;
+      font-size: 4rem;
+      margin-top: 3rem;
     }
 
-    .temps{
-      font-size: 3rem;
-      margin-top: 2rem;
+    .temps {
+      font-size: 1.5rem;
+      margin-top: 1rem;
     }
   }
 }
 
-#prix01{
+#prix01 {
   background-color: #d01c63;
   color: #fff;
 }
 
-#prix02{
+#prix02 {
   background-color: #386066;
   color: #fff;
 }
 
-#prix03{
+#prix03 {
   background-color: #697747;
   color: #fff;
+}
+
+/*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minSmart) and (min-width: $minTab+100) {
+  .table_prix {
+    .prix {
+      grid-template-rows: repeat(2, 10rem);
+      width: 20rem;
+
+      .euros {
+        font-size: 7rem;
+        margin-top: 7rem;
+      }
+
+      .temps {
+        font-size: 3rem;
+        margin-top: 2rem;
+
+      }
+    }
+  }
+}
+
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minTab) and (min-width: $minTab+100) {
+  .table_prix {
+    .prix {
+      grid-template-rows: repeat(2, 5rem);
+      width: 10rem;
+
+      .euros {
+        font-size: 4rem;
+        margin-top: 3rem;
+      }
+
+      .temps {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+
+      }
+    }
+  }
 }

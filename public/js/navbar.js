@@ -3,8 +3,8 @@ function reductionHeader(){
     $('#logo').addClass('reduc_logo');
     $('header>h1').addClass('reduc_h1');
     $('header>p').addClass('reduc_p');
-    $('header>nav a').addClass('reduc_nav');
-    $('#menu_icon').addClass('reduc_nav');
+   /* $('header>nav a').addClass('reduc_nav');
+    $('#menu_icon').addClass('reduc_nav');*/
     $('#menu_ul').addClass('reduc_show');
 }
 
@@ -13,8 +13,8 @@ function aggrHeader(){
     $('#logo').removeClass('reduc_logo');
     $('header>h1').removeClass('reduc_h1');
     $('header>p').removeClass('reduc_p');
-    $('header>nav a').removeClass('reduc_nav');
-    $('#menu_icon').removeClass('reduc_nav');
+    /*$('header>nav a').removeClass('reduc_nav');
+    $('#menu_icon').removeClass('reduc_nav');*/
     $('#menu_ul').removeClass('reduc_show')
 }
 
@@ -35,9 +35,21 @@ $(window).on('scroll',function(){
 
 // menu mobile
 $('#menu_icon').click(function(){
-    $('#menu_ul a').toggleClass('menu_mobile');
-    $('#menu_ul').toggleClass('show');
-    reductionHeader();
+    if ($('#menu_ul').attr('data') === 'on'){
+        $('#menu_icon i').removeClass('fa-times').addClass('fa-bars');
+        $('#menu_ul').fadeToggle("slow", function(){
+            $('#menu_ul').attr('data', 'off');
+            $('#menu_ul').toggleClass('show');
+            reductionHeader();
+        });
+    } else{
+        $('#menu_icon i').removeClass('fa-bars').addClass('fa-times');
+        $('#menu_ul').toggleClass('show');
+        reductionHeader();
+        $('#menu_ul').fadeToggle("slow", function(){
+            $('#menu_ul').attr('data', 'on');
+        });
+    }
 });
 
 // si on a déjà scrollé et qu'on actualise on affiche le header reduc

@@ -113,6 +113,9 @@ header {
       margin: 1.6rem; }
     header nav ul {
       display: none;
+      /*
+      box-sizing: border-box;
+      */
       background-color: #fff;
       filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#fff, endColorstr=transparent);
       background-image: -moz-linear-gradient(center top, #fff, transparent);
@@ -120,12 +123,21 @@ header {
       padding: 1.6rem;
       float: right; }
       header nav ul.show {
-        display: grid;
         position: absolute;
         right: 0;
         top: 8rem;
         font-size: 1.5rem;
-        line-height: 2rem; }
+        line-height: 2rem;
+        height: 100vh;
+        opacity: 0.9;
+        padding: 2rem 8rem; }
+        header nav ul.show li {
+          border-bottom: 1px solid #444;
+          padding: 4rem; }
+          header nav ul.show li a:hover {
+            opacity: 0.5;
+            padding-left: 3rem;
+            transition: all 0.5s ease; }
       header nav ul.reduc_show {
         left: 0;
         width: 100%; }
@@ -217,7 +229,10 @@ header {
     header .reduc_logo {
       height: 10rem; }
     header nav {
-      text-align: center; }
+      text-align: center;
+      /*&.reduc_nav {
+        color: $gris;
+      }*/ }
       header nav ul {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -234,19 +249,38 @@ header {
           color: #fff; }
       header nav #menu_icon {
         display: none; }
-      header nav.reduc_nav {
-        color: #444; }
     header .lang {
       display: grid;
       grid-template-columns: 1fr repeat(3, 3rem);
       grid-area: lang;
       margin-right: 1rem; }
-      header .lang .lang_ico a img {
+      header .lang .lang_ico {
         width: 2rem;
         height: 2rem;
-        margin: 1rem 1rem 0 0; }
+        margin: 1rem 1rem 0 0;
+        transition: background 0.5s; }
+        header .lang .lang_ico a img {
+          width: 2rem;
+          height: 2rem; }
       header .lang #lang_fr {
-        grid-column-start: 2; } }
+        grid-column-start: 2;
+        background: url("/img/lang/fr.png") no-repeat;
+        background-size: cover; }
+        header .lang #lang_fr:hover {
+          background: url("/img/lang/fr_nb.png") no-repeat;
+          background-size: cover; }
+      header .lang #lang_nl {
+        background: url("/img/lang/nl.png") no-repeat;
+        background-size: cover; }
+        header .lang #lang_nl:hover {
+          background: url("/img/lang/nl_nb.png") no-repeat;
+          background-size: cover; }
+      header .lang #lang_uk {
+        background: url("/img/lang/uk.png") no-repeat;
+        background-size: cover; }
+        header .lang #lang_uk:hover {
+          background: url("/img/lang/uk_nb.png") no-repeat;
+          background-size: cover; } }
 
 /*******************************************************************************/
 /* DESKTOP *********************************************************************/
@@ -354,19 +388,19 @@ section {
   margin-bottom: 3rem; }
   .table_prix .prix {
     display: grid;
-    grid-template-rows: repeat(2, 10rem);
+    grid-template-rows: repeat(2, 5rem);
+    width: 10rem;
     text-align: center;
     color: #fff;
     background-color: inherit;
-    width: 20rem;
     margin: 0 auto; }
     .table_prix .prix .euros {
       font-family: barutablack, sans-serif;
-      font-size: 7rem;
-      margin-top: 7rem; }
+      font-size: 4rem;
+      margin-top: 3rem; }
     .table_prix .prix .temps {
-      font-size: 3rem;
-      margin-top: 2rem; }
+      font-size: 1.5rem;
+      margin-top: 1rem; }
 
 #prix01 {
   background-color: #d01c63;
@@ -379,6 +413,53 @@ section {
 #prix03 {
   background-color: #697747;
   color: #fff; }
+
+/*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 300px) and (min-width: 800px) {
+  .table_prix .prix {
+    grid-template-rows: repeat(2, 10rem);
+    width: 20rem; }
+    .table_prix .prix .euros {
+      font-size: 7rem;
+      margin-top: 7rem; }
+    .table_prix .prix .temps {
+      font-size: 3rem;
+      margin-top: 2rem; } }
+
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 700px) and (min-width: 800px) {
+  .table_prix .prix {
+    grid-template-rows: repeat(2, 5rem);
+    width: 10rem; }
+    .table_prix .prix .euros {
+      font-size: 4rem;
+      margin-top: 3rem; }
+    .table_prix .prix .temps {
+      font-size: 1.5rem;
+      margin-top: 1rem; } }
+
+/*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 700px) and (min-width: 800px) {
+  #contact_section {
+    grid-template-columns: 1fr 1fr; }
+    #contact_section #contact {
+      margin-right: 3rem; } }
+
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: 1000px) and (min-width: 1000px) {
+  #contact_section {
+    grid-template-columns: 3fr 7fr 6fr 3fr; } }
 
 footer {
   background: #386066 url("/img/fond-footer-smart.jpg") repeat-x bottom;
@@ -423,6 +504,9 @@ footer {
 /*******************************************************************************/
 /* DESKTOP *********************************************************************/
 /*******************************************************************************/
+* {
+  box-sizing: border-box; }
+
 html {
   font-size: 62.5%; }
 
@@ -479,12 +563,12 @@ hr {
 /** FORMULAIRE **/
 .tailleInputFormulaire, input, label, button {
   display: block;
-  font-size: 4rem;
-  line-height: 4rem; }
+  font-size: 2rem;
+  line-height: 2rem; }
 
 .champs, input, textarea {
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   color: #444;
   background-color: #fff;
   background-clip: padding-box;
@@ -500,8 +584,8 @@ label {
 
 button {
   margin: 3rem 0;
-  padding: 3rem;
-  width: 25rem;
+  padding: 2rem;
+  width: 15rem;
   color: #444;
   background-color: #ccc;
   border: 1px solid #ccc; }
