@@ -36,14 +36,14 @@ $(window).on('scroll',function(){
 // menu mobile
 $('#menu_icon').click(function(){
     if ($('#menu_ul').attr('data') === 'on'){
-        $('#menu_icon i').removeClass('fa-times').addClass('fa-bars');
+        $('#menu_icon span').toggleClass('close');
         $('#menu_ul').fadeToggle("slow", function(){
             $('#menu_ul').attr('data', 'off');
             $('#menu_ul').toggleClass('show');
             reductionHeader();
         });
     } else{
-        $('#menu_icon i').removeClass('fa-bars').addClass('fa-times');
+        $('#menu_icon span').toggleClass('close');
         $('#menu_ul').toggleClass('show');
         reductionHeader();
         $('#menu_ul').fadeToggle("slow", function(){

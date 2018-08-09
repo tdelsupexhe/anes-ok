@@ -21,7 +21,7 @@ class AnesType extends AbstractType
             ->add('anneeNaissance', NumberType::class)
             ->add('text', TextareaType::class)
 
-            ->add('save', SubmitType::class, array('label' => 'Envoyer'))
+            ->add('save', SubmitType::class, array('label' => 'Envoyer', 'attr' => ['class' => 'rounded']))
         ;
     }
 

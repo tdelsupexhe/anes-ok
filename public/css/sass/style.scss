@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
 @font-face {
   font-family: 'barutablack';
   src: url('/fonts/rns-b-webfont.eot');
@@ -107,15 +109,19 @@ hr{
 
 input{
   @extend .tailleInputFormulaire;
-  @extend .champs
+  @extend .champs;
 }
 
 textarea{
-  @extend .champs
+  @extend .champs;
+}
+
+select{
+  @extend .champs;
 }
 
 textarea[id=contact_message]{
-  min-height: 200px;
+  min-height: 20rem;
 }
 
 
@@ -128,7 +134,7 @@ button{
   @extend .tailleInputFormulaire;
   margin: $margesGenerales 0;
   padding: ($margesGenerales/3)*2;
-  width: 15rem;
+  width: 20rem;
   color: $gris;
   background-color: $grisClair;
   border: 1px solid $grisClair;

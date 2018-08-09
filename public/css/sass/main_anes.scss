@@ -1,0 +1,149 @@
+//créer des images 700x +-500 et les miniatures 100x50
+
+article{
+  &.grid_article{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+            "titre      titre"
+            "hr         hr"
+            "show_image show_image"
+            "thumbnails thumbnails"
+            "texte texte";
+    margin: $margesGenerales;
+
+    h2{
+      font-size: $tailleH2Min;
+      line-height: $lineHeightH2Min;
+    }
+
+    hr{
+      grid-area: hr;
+    }
+
+    .titre_article{
+      grid-area: titre;
+    }
+
+    .texte_article{
+      grid-area: texte;
+      margin: $margesGenerales $margesGenerales 0 $margesGenerales;
+    }
+
+    .image_article{
+      grid-area: show_image;
+      margin-bottom: 0;
+
+      img{
+        display: block;
+        max-width: 32rem;
+        margin: 0 auto;
+      }
+    }
+
+    .thumb_article{
+      grid-area: thumbnails;
+      margin: 1rem auto;
+
+      img{
+        max-width: 5rem;
+      }
+    }
+  }
+}
+
+
+
+/*******************************************************************************/
+/* SMARTPHONE ******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minSmart) and (min-width: $minTab+100) {
+  article {
+    &.grid_article {
+      h2 {
+        font-size: $tailleH2;
+        line-height: $lineHeightH2;
+      }
+
+      .image_article {
+        img {
+          max-width: 100%;
+        }
+      }
+      .thumb_article {
+        img {
+          max-width: 10rem;
+        }
+      }
+    }
+  }
+}
+
+/*******************************************************************************/
+/* TABLETTES *******************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minTab) and (min-width: $minTab+100) {
+  article{
+    &.grid_article{
+      grid-template-columns: 3fr 7fr 6fr 3fr;
+      grid-template-areas:
+              "a  titre      titre        b"
+              "a  hr         hr           b"
+              "a  show_image show_image   b"
+              "a  thumbnails thumbnails   b"
+              "a  texte      texte        b";
+      h2 {
+        font-size: ($tailleH2/8)*5;
+        line-height: ($lineHeightH2/8)*5;
+      }
+
+      .image_article {
+        img {
+          max-width: 50rem;
+        }
+      }
+
+      .thumb_article {
+        img {
+          max-width: 8rem;
+        }
+      }
+    }
+  }
+}
+
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minDesk) and (min-width: $minDesk) {
+  /*article {
+    &.grid_article {
+      grid-template-columns: 3fr 7fr 6fr 3fr;
+      grid-template-areas:
+      "a  titre      titre    b"
+      "a  hr         hr       b"
+      "a  show_image texte    b"
+      "a  show_image texte    b"
+      "a  show_image texte    b"
+      "a  thumbnails texte    b";
+    }
+  }*/
+}
+
+/*******************************************************************************/
+/* DESKTOP *********************************************************************/
+/*******************************************************************************/
+@media all and (min-device-width: $minDesk+230) and (min-width: $minDesk+230) {
+  article {
+    &.grid_article {
+      grid-template-columns: 3fr 7fr 6fr 3fr;
+      grid-template-areas:
+      "a  titre      titre    b"
+      "a  hr         hr       b"
+      "a  show_image texte    b"
+      "a  show_image texte    b"
+      "a  show_image texte    b"
+      "a  thumbnails texte    b";
+    }
+  }
+}

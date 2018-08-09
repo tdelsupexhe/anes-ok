@@ -22,7 +22,7 @@ class ImageAnesType extends AbstractType
             ->add('anes', EntityType::class, array(
                 'class' => Anes::class
             ))
-            ->add('save', SubmitType::class, array('label' => 'Ajouter'))
+            ->add('save', SubmitType::class, array('label' => 'Ajouter', 'attr' => ['class' => 'rounded']))
         ;
     }
 

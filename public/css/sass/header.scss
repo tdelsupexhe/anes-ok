@@ -61,13 +61,30 @@ header {
       background-color: inherit;
       text-align: right;
       margin: $tailleH1/5;
+
+      span {
+        font-family: "fontawesome", sans-serif;
+        font-size: 2rem;
+        display: block;
+        margin: 15% auto;
+        width: 2rem;
+        transition: transform .3s ease;
+        transform-origin: center;
+      }
+
+      span:before {
+        content: "\f0c9";
+      }
+      span.close {
+        transform: rotate(-180deg);
+      }
+      span.close:before {
+        content: "\f00d";
+      }
     }
 
     ul {
       display: none;
-      /*
-      box-sizing: border-box;
-      */
       @include gradient($blanc, transparent);
       padding: $tailleH1/5;
       float: right;
@@ -79,16 +96,22 @@ header {
         font-size: $tailleTextHeaderMin;
         line-height: $tailleTextHeaderMin+0.5rem;
         height: 100vh;
-        opacity: 0.9;
+        opacity: 0.98;
         padding: $tailleH1/4 $tailleH1;
 
         li{
           border-bottom: 1px solid $gris;
           padding: $tailleH1/2;
 
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+
           a:hover{
             opacity: 0.5;
-            padding-left: 3rem;
+            padding-left: $margesGenerales;
             transition: all 0.5s ease;
           }
         }
@@ -171,8 +194,11 @@ header {
 
     nav {
       #menu_icon {
-        .fa-2x {
-          font-size: $tailleMenuMobile;
+        margin: 4rem;
+
+        span {
+          font-size: 5rem;
+          width: 5rem;
         }
       }
 
@@ -204,7 +230,7 @@ header {
 
     &.reduc_header {
       grid-template-rows: 8rem 6rem;
-      grid-template-columns: 2rem 21rem 12rem 1fr 55rem;
+      grid-template-columns: 2rem 21rem 12rem 1fr 44rem;
       grid-template-areas:  "a nom_h1 logo d lang"
       "a nom_p  logo d menu";
     }
@@ -272,10 +298,6 @@ header {
       #menu_icon {
         display: none;
       }
-
-      /*&.reduc_nav {
-        color: $gris;
-      }*/
     }
 
     .lang {
@@ -288,7 +310,7 @@ header {
         width: 2rem;
         height: 2rem;
         margin: 1rem 1rem 0 0;
-        transition: background 0.5s;
+        transition: all 0.5s;
 
         a {
           img {
@@ -299,6 +321,11 @@ header {
         }
       }
 
+      .langHover{
+        background-size: cover;
+        transform: rotate(90deg);
+      }
+
       #lang_fr{
         grid-column-start: 2;
         background: url("/img/lang/fr.png") no-repeat;
@@ -306,7 +333,7 @@ header {
 
         &:hover{
           background: url("/img/lang/fr_nb.png") no-repeat;
-          background-size: cover;
+          @extend .langHover;
         }
       }
 
@@ -316,7 +343,7 @@ header {
 
         &:hover{
           background: url("/img/lang/nl_nb.png") no-repeat;
-          background-size: cover;
+          @extend .langHover;
         }
       }
 
@@ -326,7 +353,7 @@ header {
 
         &:hover{
           background: url("/img/lang/uk_nb.png") no-repeat;
-          background-size: cover;
+          @extend .langHover;
         }
       }
     }

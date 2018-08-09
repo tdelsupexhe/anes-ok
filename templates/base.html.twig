@@ -12,6 +12,15 @@
     </head>
     <body>
         <div class="content">
+            <div id="dialog-message" title="Download complete">
+                <p>
+                    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+                    Your files have downloaded successfully into the My Downloads folder.
+                </p>
+                <p>
+                    Currently using <b>36% of your storage space</b>.
+                </p>
+            </div>
         {% block header %}
             <header>
                 <h1>Ânes-OK</h1>
@@ -30,7 +39,7 @@
                     </div>
                 </div>
                 <nav>
-                    <div id="menu_icon"><i class="fas fa-bars fa-2x"></i></div>
+                    <div id="menu_icon"><span></span></div>
                     <ul id="menu_ul">
                         <li><a href="{{ path('homepage') }}">Accueil</a></li>
                         <li><a href="{{ path('anes') }}">Nos Ânes</a></li>

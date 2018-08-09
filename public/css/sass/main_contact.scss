@@ -1,10 +1,20 @@
-
+#contact_section {
+  label, input, button{
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
 
 /*******************************************************************************/
 /* SMARTPHONE ******************************************************************/
 /*******************************************************************************/
 @media all and (min-device-width: $minSmart) and (min-width: $minTab+100) {
-
+  #contact_section {
+    label, input, button{
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+  }
 }
 
 /*******************************************************************************/
@@ -13,6 +23,11 @@
 @media all and (min-device-width: $minTab) and (min-width: $minTab+100) {
   #contact_section {
     grid-template-columns: 1fr 1fr;
+
+    label, input, button{
+      font-size: 2rem;
+      line-height: 2rem;
+    }
 
     #contact {
       margin-right: 3rem;

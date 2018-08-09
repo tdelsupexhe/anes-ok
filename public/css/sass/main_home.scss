@@ -1,6 +1,10 @@
 section {
   margin: $margesGenerales;
 
+  a:hover{
+    color: $aHover;
+  }
+
   h2 {
     font-size: $tailleH2Min;
     line-height: $lineHeightH2Min;
@@ -76,7 +80,7 @@ section {
 @media all and (min-device-width: $minTab) and (min-width: $minTab+100) {
   section {
     display: grid;
-    grid-template-columns: 10fr 350px;
+    grid-template-columns: 10fr 35rem;
     grid-template-areas: "titre  titre" "hr     hr" "texte  images";
 
     .titre_section {
